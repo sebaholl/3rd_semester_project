@@ -1,0 +1,66 @@
+/*
+Theme Name: 3rdSemester
+Author: Sebastian
+Version: 1.0.0
+Text Domain: 3rdSemester
+*/
+
+
+
+/*
+Theme Name: Omniora
+Author: Sebastian
+Version: 1.0.0
+Text Domain: omniora
+*/
+
+/* === Reset & base === */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; color: #2c2c2c; background: #fff; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* === Layout === */
+.container { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
+
+/* Header */
+.site-header { background: #0b2a55; color: #fff; }
+.site-branding { font-size: 20px; font-weight: bold; }
+.nav { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.nav a { color: #fff; padding: 8px 0; }
+.nav a:hover { border-bottom: 2px solid #FF6B35; }
+
+/* Buttons */
+.btn { display: inline-block; padding: 10px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.btn-primary { background: #FF6B35; color: #fff; }
+.btn-secondary { background: #0b2a55; color: #fff; }
+
+/* Search panel */
+.search-panel { display: none; background: #092140; color: #fff; padding: 10px 0; }
+
+/* Main */
+main { padding: 20px 16px; }
+
+/* Hero */
+.hero { background: #e9f1ff; border-radius: 12px; margin: 20px 0; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; overflow: hidden; }
+.hero-text { padding: 24px; }
+.hero-text h1 { font-size: 36px; margin: 0 0 10px; }
+.hero-text p { margin: 0 0 16px; font-size: 18px; }
+.hero-image { min-height: 260px; background: #dbe9ff center/cover no-repeat; }
+
+/* Blog grid */
+.blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 20px; }
+.blog-card { background: #f7f7f7; padding: 12px; border-radius: 10px; }
+.blog-card h2 { margin: 10px 0; font-size: 20px; }
+
+/* Footer */
+.site-footer { background: #0b2a55; color: #fff; margin-top: 40px; }
+.site-footer .container { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+
+.page-wrapper { max-width: 1000px; margin: 40px auto; }
+.page-title { font-size: 32px; font-weight: 800; margin-bottom: 20px; color:#0b2a55; }
+
+
+
+
