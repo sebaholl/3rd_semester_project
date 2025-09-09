@@ -62,6 +62,7 @@ main { padding: 20px 16px; }
 .page-title { font-size: 32px; font-weight: 800; margin-bottom: 20px; color:#0b2a55; }
 
 
+/* Cliff testing 1.0 "..." */
 
 .excerpt-clamp {
   display: -webkit-box;
@@ -70,4 +71,3 @@ main { padding: 20px 16px; }
   overflow: hidden;
 }
 
-/* Does it work? */
