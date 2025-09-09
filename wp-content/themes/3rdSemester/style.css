@@ -63,4 +63,11 @@ main { padding: 20px 16px; }
 
 
 
+.excerpt-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* počet řádků */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
+/* Does it work? */
