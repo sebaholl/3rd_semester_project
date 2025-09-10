@@ -1,0 +1,60 @@
+.product-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* so it wraps on smaller screens */
+  padding-top: 50px;
+}
+
+.product-card {
+  width: 250px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  position: relative;
+  padding: 50px;
+}
+
+.product-image {
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.product-info h3 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 10px 0;
+  color: #333;
+}
+
+.price {
+  margin: 5px 0;
+}
+
+.price .current {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.price .old {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.member-price {
+  background: #e5005a;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
