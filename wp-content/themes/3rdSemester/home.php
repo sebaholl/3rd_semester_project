@@ -1,19 +1,37 @@
-<?php get_header(); ?>
+<?php
+/* DEBUG */ echo "<!-- USING home.php -->\n";
+/** Blog index (Posts page) */
+get_header(); ?>
 
-<h1><?php echo function_exists('pll__') ? pll__('Blog') : __('Blog','omniora'); ?></h1>
-<?php get_search_form(); ?>
+<section class="section">
+  <div class="container">
+    <header class="section-head">
+      <h1 class="h2"><?php echo function_exists('pll__') ? pll__('Blog') : __('Blog','omniora'); ?></h1>
+    </header>
 
-<div class="blog-grid">
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
-  <article class="blog-card">
-    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-    <p><small><?php echo get_the_date(); ?></small></p>
-    <p><?php echo esc_html( wp_trim_words(get_the_excerpt(), 26) ); ?></p>
-  </article>
-<?php endwhile; else: ?>
-  <p>No posts found.</p>
-<?php endif; ?>
-</div>
+    <?php if ( have_posts() ) : ?>
+      <div class="blog-grid">
+        <?php while ( have_posts() ) : the_post();
+          $post_id = get_the_ID();
+          include get_stylesheet_directory() . '/post-card-blog.php';
+        endwhile; ?>
+      </div>
 
-<?php the_posts_pagination(); ?>
-<?php get_footer(); ?>
+      <nav class="pagination-wrap" aria-label="<?php esc_attr_e('Posts pagination','omniora'); ?>">
+        <?php
+          the_posts_pagination([
+            'mid_size'  => 2,
+            'prev_text' => __('« Prev','omniora'),
+            'next_text' => __('Next »','omniora'),
+          ]);
+        ?>
+      </nav>
+
+    <?php else: ?>
+      <p class="muted"><?php _e('No posts yet.','omniora'); ?></p>
+    <?php endif; ?>
+  </div>
+</section>
+
+<?php get_footer();
+

@@ -1,44 +1,40 @@
 <?php get_header(); ?>
 
 <?php
-// Vytáhneme obsah hero z ACF Options (fallbacky, když ACF ještě není vyplněné)
-$headline  = omni_opt('hero_headline', 'Get Moving Today');
-$sub       = omni_opt('hero_subheadline', 'All for Sport. All for You.');
-$cta_label = omni_opt('hero_cta_label', function_exists('pll__')?pll__('Shop Now'):'Shop Now');
-$cta_link  = omni_opt('hero_cta_link', ['url'=>home_url('/')]); // ACF Link vrací pole (url, title, target)
-$bg        = omni_opt('hero_bg'); // ACF Image vrací pole
-$bgurl     = is_array($bg) && !empty($bg['url']) ? esc_url($bg['url']) : '';
+// HERO content (safe fallbacks if ACF options aren't set)
+$headline  = function_exists('omni_opt') ? omni_opt('hero_headline', 'Get Moving Today') : 'Get Moving Today';
+$sub       = function_exists('omni_opt') ? omni_opt('hero_subheadline', 'All for Sport. All for You.') : 'All for Sport. All for You.';
+$cta_label = function_exists('omni_opt') ? omni_opt('hero_cta_label', (function_exists('pll__')? pll__('Shop Now') : 'Shop Now')) : (function_exists('pll__')? pll__('Shop Now') : 'Shop Now');
+$cta_link  = function_exists('omni_opt') ? omni_opt('hero_cta_link', ['url'=>home_url('/')]) : ['url'=>home_url('/')];
+$bg        = function_exists('omni_opt') ? omni_opt('hero_bg') : null;
+$bgurl     = (is_array($bg) && !empty($bg['url'])) ? esc_url($bg['url']) : '';
 ?>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1><?php echo esc_html($headline); ?></h1>
-    <p><?php echo esc_html($sub); ?></p>
-    <a class="btn btn-primary" href="<?php echo esc_url(is_array($cta_link)?($cta_link['url']??'#'):'#'); ?>">
-      <?php echo esc_html($cta_label); ?>
-    </a>
-    <a class="btn btn-secondary" href="<?php echo esc_url( get_permalink( get_option('page_for_posts') ) ); ?>">
-      <?php echo function_exists('pll__') ? pll__('Read Blog') : __('Read Blog','omniora'); ?>
-    </a>
+<section class="homepage-hero">
+  <div class="homepage-hero__inner container">
+    <div class="homepage-hero__text">
+      <h1 class="homepage-hero__title"><?php echo esc_html($headline); ?></h1>
+      <p class="homepage-hero__sub"><?php echo esc_html($sub); ?></p>
+      <div class="homepage-hero__actions">
+        <a class="btn btn--primary" href="<?php echo esc_url(is_array($cta_link)?($cta_link['url']??'#'):'#'); ?>">
+          <?php echo esc_html($cta_label); ?>
+        </a>
+        <a class="btn btn--secondary" href="<?php echo esc_url( get_permalink( get_option('page_for_posts') ) ); ?>">
+          <?php echo function_exists('pll__') ? pll__('Read Blog') : __('Read Blog','omniora'); ?>
+        </a>
+      </div>
+    </div>
+    <div class="homepage-hero__image" <?php echo $bgurl ? 'style="background-image:url('.$bgurl.');"' : ''; ?>></div>
   </div>
-  <div class="hero-image" style="background-image:url('<?php echo $bgurl; ?>')"></div>
 </section>
 
-<section>
-  <h2><?php echo function_exists('pll__') ? pll__('From our Blog') : __('From our Blog','omniora'); ?></h2>
-  <div class="blog-grid">
-    <?php
-      $q = new WP_Query(['post_type'=>'post','posts_per_page'=>3]);
-      if ($q->have_posts()):
-        while ($q->have_posts()): $q->the_post(); ?>
-          <article class="blog-card">
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <p><?php echo esc_html( wp_trim_words(get_the_excerpt(), 24) ); ?></p>
-          </article>
-    <?php endwhile; wp_reset_postdata(); else: ?>
-      <p>No posts yet.</p>
-    <?php endif; ?>
-  </div>
-</section>
+
+<?php
+// Include blog section template from THEME ROOT
+$path = get_stylesheet_directory() . '/home-blog-template.php';
+if ( file_exists( $path ) ) { include $path; }
+?>
 
 <?php get_footer(); ?>
+
+
