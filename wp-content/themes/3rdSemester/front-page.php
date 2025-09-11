@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 
 <?php
+// HERO obsah z ACF Options (fallbacky)
+$headline  = function_exists('omni_opt') ? omni_opt('hero_headline', 'Get Moving Today') : 'Get Moving Today';
+$sub       = function_exists('omni_opt') ? omni_opt('hero_subheadline', 'All for Sport. All for You.') : 'All for Sport. All for You.';
+$cta_label = function_exists('omni_opt') ? omni_opt('hero_cta_label', function_exists('pll__')?pll__('Shop Now'):'Shop Now') : (function_exists('pll__')?pll__('Shop Now'):'Shop Now');
+$cta_link  = function_exists('omni_opt') ? omni_opt('hero_cta_link', ['url'=>home_url('/')]) : ['url'=>home_url('/')];
+$bg        = function_exists('omni_opt') ? omni_opt('hero_bg') : null;
+$bgurl     = (is_array($bg) && !empty($bg['url'])) ? esc_url($bg['url']) : '';
 // Read hero fields from the Home page (no Options page needed)
 $home_id   = get_queried_object_id(); // the "Home" page ID
 

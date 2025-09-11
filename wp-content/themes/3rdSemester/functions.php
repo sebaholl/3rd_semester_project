@@ -13,6 +13,18 @@ add_action('after_setup_theme', function () {
 });
 
 // Načtení CSS a JS
+
+add_action('wp_enqueue_scripts', function () {
+  wp_enqueue_style('omniora', get_stylesheet_uri(), [], '1.0.0');
+  wp_enqueue_style(
+    'shop-style',
+    get_template_directory_uri() . '/Shopstyle.css',
+    [],
+    filemtime(get_template_directory() . '/Shopstyle.css')
+  );
+  wp_enqueue_script('omniora', get_template_directory_uri().'/assets/main.js', [], '1.0.0', true);
+});
+
 add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style('omniora', get_stylesheet_uri(), [], '1.0.0');
   wp_enqueue_script('omniora', get_template_directory_uri().'/assets/main.js', [], '1.0.0', true);
