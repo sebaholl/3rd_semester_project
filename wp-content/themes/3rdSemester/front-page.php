@@ -1,13 +1,21 @@
 <?php get_header(); ?>
 
 <?php
-// HERO content (safe fallbacks if ACF options aren't set)
-$headline  = function_exists('omni_opt') ? omni_opt('hero_headline', 'Get Moving Today') : 'Get Moving Today';
-$sub       = function_exists('omni_opt') ? omni_opt('hero_subheadline', 'All for Sport. All for You.') : 'All for Sport. All for You.';
-$cta_label = function_exists('omni_opt') ? omni_opt('hero_cta_label', (function_exists('pll__')? pll__('Shop Now') : 'Shop Now')) : (function_exists('pll__')? pll__('Shop Now') : 'Shop Now');
-$cta_link  = function_exists('omni_opt') ? omni_opt('hero_cta_link', ['url'=>home_url('/')]) : ['url'=>home_url('/')];
-$bg        = function_exists('omni_opt') ? omni_opt('hero_bg') : null;
-$bgurl     = (is_array($bg) && !empty($bg['url'])) ? esc_url($bg['url']) : '';
+// Read hero fields from the Home page (no Options page needed)
+$home_id   = get_queried_object_id(); // the "Home" page ID
+
+$headline  = function_exists('get_field') ? (get_field('hero_headline', $home_id) ?: 'Get Moving Today') : 'Get Moving Today';
+$sub       = function_exists('get_field') ? (get_field('hero_subheadline', $home_id) ?: 'All for Sport. All for You.') : 'All for Sport. All for You.';
+
+$cta       = function_exists('get_field') ? get_field('hero_cta_link', $home_id) : null;  // ACF Link field (array)
+$cta_label = function_exists('get_field') ? (get_field('hero_cta_label', $home_id) ?: (function_exists('pll__')? pll__('Shop Now') : 'Shop Now')) : (function_exists('pll__')? pll__('Shop Now') : 'Shop Now');
+$cta_link  = is_array($cta) && !empty($cta['url']) ? $cta : ['url' => home_url('/')];
+
+$bg        = function_exists('get_field') ? get_field('hero_bg', $home_id) : null;        // ACF Image field
+$bgurl     = '';
+if ($bg) {
+  $bgurl = is_array($bg) && !empty($bg['url']) ? esc_url($bg['url']) : (is_string($bg) ? esc_url($bg) : '');
+}
 ?>
 
 <section class="homepage-hero">

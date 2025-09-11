@@ -340,3 +340,118 @@ main { padding: 20px 16px; }
 .pagination-wrap .page-numbers:hover{
   box-shadow: var(--shadow-card); transform: translateY(-1px);
 }
+
+
+/* --- Single article extras --- */
+.single-article { padding: 40px 0; }
+.single-article__wrap { width:min(860px, 92%); margin:0 auto; }
+.single-article__title { font-size: clamp(28px, 4vw, 40px); line-height:1.2; margin:0 0 8px; color:#111827; }
+.single-article__meta { color:#6b7280; margin:0 0 18px; }
+.single-article__thumb img { width:100%; height:auto; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.06); }
+.single-article__content { margin-top:22px; }
+.single-article__content p { margin:0 0 1em; }
+
+.single-article__author {
+  display:flex; gap:14px; align-items:flex-start;
+  margin:28px 0 16px; padding:14px; border:1px solid #e5e7eb; border-radius:12px; background:#fafafa;
+}
+.single-article__author-avatar img { border-radius:50%; }
+.single-article__author-name { margin:0 0 4px; font-size:18px; }
+.single-article__author-bio { margin:0; color:#4b5563; }
+
+.single-article__meta-bottom {
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:10px 0 24px;
+}
+.single-article__tags a { display:inline-block; margin-right:6px; padding:4px 10px; border-radius:999px; background:#eef2f7; text-decoration:none; }
+.single-article__share a { margin-left:10px; text-decoration:none; }
+
+.related-posts { margin-top:28px; }
+.related-posts__title { font-size:20px; margin:0 0 12px; }
+.related-posts__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width: 900px){
+  .related-posts__grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 580px){
+  .related-posts__grid { grid-template-columns:1fr; }
+}
+
+.single-article__footer { margin-top:28px; display:flex; flex-direction:column; gap:14px; }
+.single-article__nav { display:flex; justify-content:space-between; gap:12px; color:#374151; }
+.single-article__nav a { text-decoration:none; }
+.single-article__nav a:hover { text-decoration:underline; }
+
+/* Use your existing card styles; ensure basic fallbacks: */
+.post-card { background:#fff; border:1px solid #e5e7eb; border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
+.post-card__media { display:block; }
+.post-card__img { width:100%; height:auto; display:block; }
+.post-card__placeholder { display:flex; align-items:center; justify-content:center; min-height:160px; background:#eceff4; color:#637083; }
+.post-card__body { padding:14px; display:flex; flex-direction:column; gap:10px; }
+.post-card__title { margin:0; font-size:18px; }
+
+
+/* ----------------------------
+   Single Post (single.php)
+----------------------------- */
+
+/* Subtitle under title */
+.single-article__subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #555;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+/* Meta badges (e.g. reading time) */
+.single-article__meta .badge {
+  display: inline-block;
+  background: #f0f2f7;
+  color: #333;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+/* Summary (intro paragraph) */
+.single-article__summary {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  font-style: italic;
+  margin: 20px 0;
+  padding: 12px 18px;
+  background: #f9f9f9;
+  border-left: 4px solid #005bbb;
+  border-radius: 6px;
+}
+
+/* Highlight quote block */
+.single-article__quote {
+  margin: 32px 0;
+  padding: 20px 28px;
+  background: #eef4ff;
+  border-left: 4px solid #005bbb;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #222;
+  border-radius: 6px;
+}
+.single-article__quote p {
+  margin: 0;
+}
+
+/* Related posts grid */
+.related-posts {
+  margin-top: 40px;
+}
+.related-posts__title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+.related-posts__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
