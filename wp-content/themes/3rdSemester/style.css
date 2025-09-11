@@ -455,3 +455,113 @@ main { padding: 20px 16px; }
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
+
+
+/* ===============================
+   Comment Section Styling
+   =============================== */
+
+#comments {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #eee;
+}
+
+#comments h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+/* Comment form */
+.comment-respond {
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.comment-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.comment-form textarea,
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 15px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.comment-form textarea:focus,
+.comment-form input:focus {
+  outline: none;
+  border-color: #0d2145; /* your dark blue */
+}
+
+/* Submit button */
+.comment-form input[type="submit"] {
+  background: #0d2145; /* dark navy */
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.comment-form input[type="submit"]:hover {
+  background: #152f63; /* slightly lighter navy */
+}
+
+/* List of comments */
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-list li {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #0d2145;
+}
+
+.comment-meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.comment-content {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.reply a {
+  font-size: 14px;
+  color: #0d2145;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reply a:hover {
+  text-decoration: underline;
+}
