@@ -17,7 +17,7 @@ if ($acf_items && is_array($acf_items)) {
   $post_ids = array_values(array_filter($post_ids));
 }
 
-// Fallback for the “All Blogs” button
+// Fallback for the “All Blogs” buttonw
 if (empty($all_link)) {
   $posts_page_id = (int) get_option('page_for_posts');
   if ($posts_page_id) {
