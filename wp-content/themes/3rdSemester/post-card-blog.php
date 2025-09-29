@@ -1,5 +1,6 @@
 <?php
 if (empty($post_id)) return;
+
 $permalink = get_permalink($post_id);
 $title     = get_the_title($post_id);
 $excerpt   = wp_trim_words(get_the_excerpt($post_id), 26);
@@ -9,19 +10,19 @@ $img_html = '';
 // 1) Featured image
 if (has_post_thumbnail($post_id)) {
   $img_html = get_the_post_thumbnail($post_id, 'medium_large', [
-    'class' => 'post-card__img',
-    'alt'   => esc_attr($title),
+    'class'   => 'post-card__img',
+    'alt'     => esc_attr($title),
     'loading' => 'lazy',
   ]);
 } else {
-  // 2) ACF hero_image (funguje pro ID i array; pokud ACF vrací URL, vezmeme ji taky)
+  // 2) ACF hero_image fallback
   $hero = function_exists('get_field') ? get_field('hero_image', $post_id) : '';
   if ($hero) {
     $hero_id = is_array($hero) ? ($hero['ID'] ?? 0) : (is_numeric($hero) ? (int)$hero : 0);
     if ($hero_id) {
       $img_html = wp_get_attachment_image($hero_id, 'medium_large', false, [
-        'class' => 'post-card__img',
-        'alt'   => esc_attr($title),
+        'class'   => 'post-card__img',
+        'alt'     => esc_attr($title),
         'loading' => 'lazy',
       ]);
     } else {
@@ -37,6 +38,11 @@ if (has_post_thumbnail($post_id)) {
 if (!$img_html) {
   $img_html = '<div class="post-card__placeholder">No image</div>';
 }
+
+// Taxonomy meta
+$cats = get_the_category($post_id);
+$primary_cat = $cats ? $cats[0] : null;
+$tags = get_the_terms($post_id, 'post_tag');
 ?>
 <article class="post-card">
   <a class="post-card__media" href="<?php echo esc_url($permalink); ?>">
@@ -47,11 +53,32 @@ if (!$img_html) {
     <h3 class="post-card__title">
       <a href="<?php echo esc_url($permalink); ?>"><?php echo esc_html($title); ?></a>
     </h3>
+
+    <!-- Category + Tags chips -->
+    <p class="post-card__meta" aria-label="<?php esc_attr_e('Post taxonomy','omniora'); ?>">
+      <?php if ($primary_cat): ?>
+        <a class="chip chip--cat"
+           rel="category tag"
+           href="<?php echo esc_url(get_category_link($primary_cat->term_id)); ?>">
+          <?php echo esc_html($primary_cat->name); ?>
+        </a>
+      <?php endif; ?>
+
+      <?php if (!empty($tags) && !is_wp_error($tags)): ?>
+        <?php foreach ($tags as $t): ?>
+          <a class="chip chip--tag"
+             rel="tag"
+             href="<?php echo esc_url(get_term_link($t)); ?>">
+            <?php echo esc_html($t->name); ?>
+          </a>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </p>
+
     <p class="post-card__excerpt"><?php echo esc_html($excerpt); ?></p>
+
     <a class="btn btn--dark" href="<?php echo esc_url($permalink); ?>">
       <?php echo function_exists('pll__') ? pll__('Read') : __('Read','omniora'); ?>
     </a>
   </div>
 </article>
-
-

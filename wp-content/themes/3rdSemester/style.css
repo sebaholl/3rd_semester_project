@@ -566,3 +566,6 @@ main { padding: 20px 16px; }
 .reply a:hover {
   text-decoration: underline;
 }
+
+.chip{display:inline-block;padding:.25rem .6rem;border:1px solid #ddd;border-radius:999px;font-size:.85rem;text-decoration:none;margin:.2rem .25rem 0 0}
+.chip--cat{font-weight:600}
