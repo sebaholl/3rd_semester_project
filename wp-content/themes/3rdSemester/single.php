@@ -20,16 +20,35 @@ get_header(); ?>
             <p class="single-article__subtitle"><?php echo esc_html($subtitle); ?></p>
           <?php endif; ?>
 
+          <?php
+            // Taxonomy chips (Category + Tags)
+            $cats        = get_the_category();
+            $primary_cat = $cats ? $cats[0] : null;
+            $tags        = get_the_terms(get_the_ID(), 'post_tag');
+          ?>
+          <p class="single-article__tax-chips" aria-label="<?php echo esc_attr__('Post taxonomy', 'omniora'); ?>">
+            <?php if ($primary_cat): ?>
+              <a class="chip chip--cat"
+                 rel="category tag"
+                 href="<?php echo esc_url(get_category_link($primary_cat->term_id)); ?>">
+                <?php echo esc_html($primary_cat->name); ?>
+              </a>
+            <?php endif; ?>
+
+            <?php if (!empty($tags) && !is_wp_error($tags)): ?>
+              <?php foreach ($tags as $t): ?>
+                <a class="chip chip--tag" rel="tag" href="<?php echo esc_url(get_term_link($t)); ?>">
+                  <?php echo esc_html($t->name); ?>
+                </a>
+              <?php endforeach; ?>
+            <?php endif; ?>
+          </p>
+
           <p class="single-article__meta">
             <time datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
               <?php echo esc_html( get_the_date() ); ?>
             </time>
             <?php
-              $cats = get_the_category_list(', ');
-              if ( $cats ) {
-                echo ' · <span class="single-article__cats">' . $cats . '</span>';
-              }
-
               // ACF: reading time
               $reading_time = function_exists('get_field') ? (int) get_field('reading_time') : 0;
               if ($reading_time) {
@@ -86,7 +105,7 @@ get_header(); ?>
 
         <!-- AUTHOR BOX -->
         <?php
-          $author_id = get_the_author_meta( 'ID' );
+          $author_id  = get_the_author_meta( 'ID' );
           $author_bio = get_the_author_meta( 'description', $author_id );
         ?>
         <aside class="single-article__author">
@@ -210,6 +229,8 @@ get_header(); ?>
 </section>
 
 <?php get_footer();
+
+
 
 
 
