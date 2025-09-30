@@ -34,9 +34,10 @@ if (has_post_thumbnail($post_id)) {
   }
 }
 
-// 3) Fallback
+// 3) Fallback (translatable)
 if (!$img_html) {
-  $img_html = '<div class="post-card__placeholder">No image</div>';
+  $noimg = function_exists('pll__') ? pll__('No image') : __('No image','omniora');
+  $img_html = '<div class="post-card__placeholder">'.esc_html($noimg).'</div>';
 }
 
 // Taxonomy meta
@@ -55,20 +56,17 @@ $tags = get_the_terms($post_id, 'post_tag');
     </h3>
 
     <!-- Category + Tags chips -->
-    <p class="post-card__meta" aria-label="<?php esc_attr_e('Post taxonomy','omniora'); ?>">
+    <p class="post-card__meta"
+       aria-label="<?php echo esc_attr( function_exists('pll__') ? pll__('Post taxonomy') : __('Post taxonomy','omniora') ); ?>">
       <?php if ($primary_cat): ?>
-        <a class="chip chip--cat"
-           rel="category tag"
-           href="<?php echo esc_url(get_category_link($primary_cat->term_id)); ?>">
+        <a class="chip chip--cat" rel="category tag" href="<?php echo esc_url(get_category_link($primary_cat->term_id)); ?>">
           <?php echo esc_html($primary_cat->name); ?>
         </a>
       <?php endif; ?>
 
       <?php if (!empty($tags) && !is_wp_error($tags)): ?>
         <?php foreach ($tags as $t): ?>
-          <a class="chip chip--tag"
-             rel="tag"
-             href="<?php echo esc_url(get_term_link($t)); ?>">
+          <a class="chip chip--tag" rel="tag" href="<?php echo esc_url(get_term_link($t)); ?>">
             <?php echo esc_html($t->name); ?>
           </a>
         <?php endforeach; ?>
@@ -82,3 +80,4 @@ $tags = get_the_terms($post_id, 'post_tag');
     </a>
   </div>
 </article>
+

@@ -1,5 +1,5 @@
 <?php
-/** Single Post template (with minimal ACF fields) */
+/** Single Post template (i18n + Polylang-aware) */
 get_header(); ?>
 
 <section class="single-article">
@@ -13,24 +13,19 @@ get_header(); ?>
           <h1 class="single-article__title"><?php the_title(); ?></h1>
 
           <?php
-          // ACF: subtitle
           $subtitle = function_exists('get_field') ? trim((string) get_field('subtitle')) : '';
-          if ($subtitle) :
-          ?>
+          if ($subtitle) : ?>
             <p class="single-article__subtitle"><?php echo esc_html($subtitle); ?></p>
           <?php endif; ?>
 
           <?php
-            // Taxonomy chips (Category + Tags)
             $cats        = get_the_category();
             $primary_cat = $cats ? $cats[0] : null;
             $tags        = get_the_terms(get_the_ID(), 'post_tag');
           ?>
           <p class="single-article__tax-chips" aria-label="<?php echo esc_attr__('Post taxonomy', 'omniora'); ?>">
             <?php if ($primary_cat): ?>
-              <a class="chip chip--cat"
-                 rel="category tag"
-                 href="<?php echo esc_url(get_category_link($primary_cat->term_id)); ?>">
+              <a class="chip chip--cat" rel="category tag" href="<?php echo esc_url(get_category_link($primary_cat->term_id)); ?>">
                 <?php echo esc_html($primary_cat->name); ?>
               </a>
             <?php endif; ?>
@@ -49,7 +44,6 @@ get_header(); ?>
               <?php echo esc_html( get_the_date() ); ?>
             </time>
             <?php
-              // ACF: reading time
               $reading_time = function_exists('get_field') ? (int) get_field('reading_time') : 0;
               if ($reading_time) {
                 echo ' · <span class="badge">'.$reading_time.' ' . esc_html__('min read','omniora') . '</span>';
@@ -58,9 +52,7 @@ get_header(); ?>
           </p>
 
           <?php
-            // Prefer ACF hero override if present, else featured image
             $hero = function_exists('get_field') ? get_field('hero_image') : null;
-
             if ( is_array($hero) && !empty($hero['url']) ) : ?>
               <div class="single-article__thumb">
                 <img src="<?php echo esc_url($hero['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
@@ -84,10 +76,8 @@ get_header(); ?>
         <div class="single-article__content">
           <?php
             the_content();
-
-            // Page links if the post is split with <!--nextpage-->
             wp_link_pages( [
-              'before' => '<nav class="page-links">' . __( 'Pages:' ),
+              'before' => '<nav class="page-links">' . ( function_exists('pll__') ? pll__('Pages:') : __('Pages:','omniora') ),
               'after'  => '</nav>',
             ] );
           ?>
@@ -154,7 +144,7 @@ get_header(); ?>
           </p>
         <?php endif; ?>
 
-        <!-- RELATED POSTS (same categories) -->
+        <!-- RELATED POSTS (same categories, language-aware) -->
         <?php
           $related = new WP_Query( [
             'post_type'           => 'post',
@@ -169,33 +159,38 @@ get_header(); ?>
                 'terms'    => wp_get_post_categories( get_the_ID() ),
               ]
             ],
+            'lang' => function_exists('pll_current_language') ? pll_current_language('slug') : '',
           ] );
 
           if ( $related->have_posts() ) : ?>
             <section class="related-posts">
-              <h3 class="related-posts__title"><?php _e( 'Related posts', 'omniora' ); ?></h3>
+              <h3 class="related-posts__title">
+                <?php echo function_exists('pll__') ? pll__('Related posts') : __('Related posts','omniora'); ?>
+              </h3>
               <div class="related-posts__grid">
                 <?php
                 while ( $related->have_posts() ) : $related->the_post();
                   $post_id = get_the_ID();
-
                   $card = get_stylesheet_directory() . '/post-card-blog.php';
                   if ( file_exists( $card ) ) {
-                    include $card; // uses your existing card partial
+                    include $card;
                   } else {
-                    // Fallback simple card
                     ?>
                     <article class="post-card">
                       <a class="post-card__media" href="<?php the_permalink(); ?>">
                         <?php if ( has_post_thumbnail() ) {
                           the_post_thumbnail( 'medium', [ 'class' => 'post-card__img', 'alt' => the_title_attribute( [ 'echo' => false ] ) ] );
                         } else { ?>
-                          <div class="post-card__placeholder">No image</div>
+                          <div class="post-card__placeholder">
+                            <?php echo function_exists('pll__') ? pll__('No image') : __('No image','omniora'); ?>
+                          </div>
                         <?php } ?>
                       </a>
                       <div class="post-card__body">
                         <h4 class="post-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                        <a class="btn btn--dark" href="<?php the_permalink(); ?>"><?php _e( 'Read', 'omniora' ); ?></a>
+                        <a class="btn btn--dark" href="<?php the_permalink(); ?>">
+                          <?php echo function_exists('pll__') ? pll__('Read') : __('Read','omniora'); ?>
+                        </a>
                       </div>
                     </article>
                     <?php
