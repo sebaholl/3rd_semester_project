@@ -1,5 +1,5 @@
 <?php
-
+/* Single product (shoe) */
 get_header(); ?>
 
 <section class="section product">
@@ -30,48 +30,53 @@ get_header(); ?>
           </div>
 
           <div class="product__body">
-            <p class="product__price"><?php echo esc_html($price); ?> kr.</p>
+            <?php if ($price): ?>
+              <p class="product__price"><?php echo esc_html($price); ?> kr.</p>
+            <?php endif; ?>
+
             <div class="product__content">
               <?php the_content(); ?>
             </div>
-            <p><a class="btn btn--dark" href="#pdp-testimonials"><?php _e('What customers say','omniora'); ?></a></p>
           </div>
         </div>
 
-        <!-- Testimonials tied to this product -->
+        <?php
+        // Related testimonials (handles post_object + relationship fields)
+        $pid  = get_the_ID();
+        $keys = ['product_ref','related_product','product','related_shoe'];
+        $meta = ['relation' => 'OR'];
+        foreach ($keys as $k) {
+          $meta[] = ['key'=>$k, 'value'=>$pid,         'compare'=>'='];
+          $meta[] = ['key'=>$k, 'value'=>'"'.$pid.'"', 'compare'=>'LIKE'];
+        }
+        $q = new WP_Query([
+          'post_type'      => 'testimonial',
+          'posts_per_page' => 3,
+          'post_status'    => 'publish',
+          'orderby'        => 'date',
+          'order'          => 'DESC',
+          'meta_query'     => $meta,
+        ]);
+        ?>
+
         <section id="pdp-testimonials" class="pdp-testimonials">
-          <h2 class="h2"><?php _e('What customers say','omniora'); ?></h2>
+          <h2 class="h2"><?php echo function_exists('pll__') ? pll__('What customers say') : __('What customers say','omniora'); ?></h2>
 
-          <?php
-          // Option A: direct query (no shortcode)
-          $args = [
-            'post_type'      => 'testimonial',
-            'posts_per_page' => 3,
-            'post_status'    => 'publish',
-            'orderby'        => 'date',
-            'order'          => 'DESC',
-            'meta_query'     => [[
-              'key'     => 'product_ref',
-              'value'   => get_the_ID(),
-              'compare' => '='
-            ]]
-          ];
-          $q = new WP_Query($args);
-
-          if ($q->have_posts()): ?>
+          <?php if ($q->have_posts()): ?>
             <div class="testimonial-grid cols-3">
               <?php while ($q->have_posts()): $q->the_post();
                 $tid    = get_the_ID();
                 $name   = get_the_title($tid);
-                $quote  = function_exists('get_field') ? (string) get_field('quote', $tid) : get_the_excerpt($tid);
-                $rating = function_exists('get_field') ? (int) get_field('rating', $tid) : 5;
+                $quote  = function_exists('get_field') ? (string)get_field('quote', $tid) : get_the_excerpt($tid);
+                $rating = function_exists('get_field') ? (int)get_field('rating', $tid) : 5;
                 $avatar = has_post_thumbnail($tid) ? get_the_post_thumbnail($tid, 'avatar-96', ['class'=>'t-card__avatar','loading'=>'lazy','alt'=>esc_attr($name.' portrait')]) : '';
+                $r      = max(1, min(5, $rating));
               ?>
                 <article class="t-card">
                   <?php if ($avatar): ?><div class="t-card__media"><?php echo $avatar; ?></div><?php endif; ?>
                   <div class="t-card__body">
-                    <div class="t-card__rating" aria-label="<?php echo esc_attr(sprintf(__('Rating: %d out of 5','omniora'), $rating)); ?>">
-                      <?php echo str_repeat('★',$rating) . str_repeat('☆', 5-$rating); ?>
+                    <div class="t-card__rating" aria-label="<?php echo esc_attr(sprintf(__('Rating: %d out of 5','omniora'), $r)); ?>">
+                      <?php echo str_repeat('★',$r) . str_repeat('☆', 5-$r); ?>
                     </div>
                     <blockquote class="t-card__quote"><p><?php echo wp_kses_post($quote); ?></p></blockquote>
                     <h3 class="t-card__name"><?php echo esc_html($name); ?></h3>
