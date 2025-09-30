@@ -588,3 +588,10 @@ main { padding: 20px 16px; }
 .t-card__rating { margin-bottom:.25rem; }
 .t-card__quote { color:#333; margin:.5rem 0; }
 .t-card__name { margin:.25rem 0; font-weight:600; }
+
+
+.lang-switch ul{display:flex;gap:.5rem;margin:0;padding:0;list-style:none}
+.lang-switch a{display:inline-block;padding:.35rem .6rem;border:1px solid #ddd;border-radius:999px;text-decoration:none;font-size:.9rem;line-height:1}
+.lang-switch a:hover{border-color:#333}
+.lang-switch li.is-active a{background:#111;color:#fff;border-color:#111;pointer-events:none}
+@media (max-width:640px){.lang-switch a{padding:.3rem .5rem;font-size:.85rem}}
