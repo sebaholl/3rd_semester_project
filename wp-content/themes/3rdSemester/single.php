@@ -171,8 +171,8 @@ get_header(); ?>
                         <?php if ( has_post_thumbnail() ) {
                           the_post_thumbnail( 'medium', [ 'class' => 'post-card__img', 'alt' => the_title_attribute( [ 'echo' => false ] ) ] );
                         } else { ?>
-                          <div class="post-card__placeholder">No image</div>
-                        <?php } ?>
+                            <img class="post-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/pictures/runningShoe.png" alt="No image available">
+                          <?php } ?>
                       </a>
                       <div class="post-card__body">
                         <h4 class="post-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
