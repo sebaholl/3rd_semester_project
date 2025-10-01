@@ -1,28 +1,49 @@
 <?php get_header(); ?>
 
 <?php
-// HERO obsah z ACF Options (fallbacky)
-$headline  = function_exists('omni_opt') ? omni_opt('hero_headline', 'Get Moving Today') : 'Get Moving Today';
-$sub       = function_exists('omni_opt') ? omni_opt('hero_subheadline', 'All for Sport. All for You.') : 'All for Sport. All for You.';
-$cta_label = function_exists('omni_opt') ? omni_opt('hero_cta_label', function_exists('pll__')?pll__('Shop Now'):'Shop Now') : (function_exists('pll__')?pll__('Shop Now'):'Shop Now');
-$cta_link  = function_exists('omni_opt') ? omni_opt('hero_cta_link', ['url'=>home_url('/')]) : ['url'=>home_url('/')];
-$bg        = function_exists('omni_opt') ? omni_opt('hero_bg') : null;
-$bgurl     = (is_array($bg) && !empty($bg['url'])) ? esc_url($bg['url']) : '';
-// Read hero fields from the Home page (no Options page needed)
-$home_id   = get_queried_object_id(); // the "Home" page ID
+// Current front page (per language)
+$home_id = get_queried_object_id();
 
-$headline  = function_exists('get_field') ? (get_field('hero_headline', $home_id) ?: 'Get Moving Today') : 'Get Moving Today';
-$sub       = function_exists('get_field') ? (get_field('hero_subheadline', $home_id) ?: 'All for Sport. All for You.') : 'All for Sport. All for You.';
+// Hero fields (ACF on the page)
+$headline   = function_exists('get_field') ? (string) get_field('hero_headline', $home_id)    : '';
+$sub        = function_exists('get_field') ? (string) get_field('hero_subheadline', $home_id) : '';
+$cta_link   = function_exists('get_field') ? get_field('hero_cta_link', $home_id)            : null; // ACF Link array
+$cta_label  = function_exists('get_field') ? (string) get_field('hero_cta_label', $home_id)  : '';
+$bg         = function_exists('get_field') ? get_field('hero_bg', $home_id)                  : null; // ACF Image
 
-$cta       = function_exists('get_field') ? get_field('hero_cta_link', $home_id) : null;  // ACF Link field (array)
-$cta_label = function_exists('get_field') ? (get_field('hero_cta_label', $home_id) ?: (function_exists('pll__')? pll__('Shop Now') : 'Shop Now')) : (function_exists('pll__')? pll__('Shop Now') : 'Shop Now');
-$cta_link  = is_array($cta) && !empty($cta['url']) ? $cta : ['url' => home_url('/')];
+// Fallbacks (translatable)
+if (!$headline)  $headline  = function_exists('pll__') ? pll__('Get Moving Today') : 'Get Moving Today';
+if (!$sub)       $sub       = function_exists('pll__') ? pll__('All for Sport. All for You.') : 'All for Sport. All for You.';
+if (!$cta_label) $cta_label = function_exists('pll__') ? pll__('Shop Now') : __('Shop Now','omniora');
 
-$bg        = function_exists('get_field') ? get_field('hero_bg', $home_id) : null;        // ACF Image field
-$bgurl     = '';
-if ($bg) {
-  $bgurl = is_array($bg) && !empty($bg['url']) ? esc_url($bg['url']) : (is_string($bg) ? esc_url($bg) : '');
+// CTA URL: prefer ACF link; else try Shop page in current language; else home
+$cta_url    = '#';
+$cta_target = '';
+if (is_array($cta_link) && !empty($cta_link['url'])) {
+  $cta_url    = $cta_link['url'];
+  $cta_target = !empty($cta_link['target']) ? $cta_link['target'] : '';
+} else {
+  $shop_page = get_page_by_path('shop'); // EN slug by default; Polylang will map below if available
+  if ($shop_page && function_exists('pll_get_post')) {
+    $shop_translated_id = pll_get_post($shop_page->ID);
+    if ($shop_translated_id) $shop_page = get_post($shop_translated_id);
+  }
+  $cta_url = $shop_page ? get_permalink($shop_page->ID) : home_url('/');
 }
+
+// Hero background URL
+$bgurl = '';
+if (is_array($bg) && !empty($bg['url']))      $bgurl = esc_url($bg['url']);
+elseif (is_string($bg) && !empty($bg))        $bgurl = esc_url($bg);
+
+// Blog page URL in current language
+$posts_page_id = (int) get_option('page_for_posts');
+if ($posts_page_id && function_exists('pll_get_post')) {
+  $translated = pll_get_post($posts_page_id);
+  if ($translated) $posts_page_id = $translated;
+}
+$blog_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('/');
+$read_blog_text = function_exists('pll__') ? pll__('Read Blog') : __('Read Blog','omniora');
 ?>
 
 <section class="homepage-hero">
@@ -31,11 +52,11 @@ if ($bg) {
       <h1 class="homepage-hero__title"><?php echo esc_html($headline); ?></h1>
       <p class="homepage-hero__sub"><?php echo esc_html($sub); ?></p>
       <div class="homepage-hero__actions">
-        <a class="btn btn--primary" href="<?php echo esc_url(is_array($cta_link)?($cta_link['url']??'#'):'#'); ?>">
+        <a class="btn btn--primary" href="<?php echo esc_url($cta_url); ?>" target="<?php echo esc_attr($cta_target); ?>">
           <?php echo esc_html($cta_label); ?>
         </a>
-        <a class="btn btn--secondary" href="<?php echo esc_url( get_permalink( get_option('page_for_posts') ) ); ?>">
-          <?php echo function_exists('pll__') ? pll__('Read Blog') : __('Read Blog','omniora'); ?>
+        <a class="btn btn--secondary" href="<?php echo esc_url($blog_url); ?>">
+          <?php echo esc_html($read_blog_text); ?>
         </a>
       </div>
     </div>
@@ -43,13 +64,13 @@ if ($bg) {
   </div>
 </section>
 
-
 <?php
-// Include blog section template from THEME ROOT
+// Blog highlights section
 $path = get_stylesheet_directory() . '/home-blog-template.php';
 if ( file_exists( $path ) ) { include $path; }
 ?>
 
 <?php get_footer(); ?>
+
 
 
