@@ -1,58 +1,68 @@
 <?php get_header(); ?>
-<?php if (have_posts()): ?>
-  <?php while (have_posts()): the_post(); ?>
-    
-  <?php  
-  // Fetch data
+<?php if (have_posts()): while (have_posts()): the_post(); ?>
 
-  ?>
-  
+  <div class="product-container">
+    <?php
+      $loop = new WP_Query([
+        'post_type'      => 'shoe',
+        'posts_per_page' => -1,
+        'lang'           => function_exists('pll_current_language') ? pll_current_language('slug') : ''
+      ]);
+    ?>
 
-<!-- Output some HTML  -->
-    <div class="product-container">
-    <!-- Product Card -->
-    
-    
-    <?php 
-        $arguments = array(
-            "post_type" => "shoe",
-            "posts_per_page" => -1
-        );
-        
-        $loop = new WP_Query($arguments);
-        ?>
+    <?php if ($loop->have_posts()): while ($loop->have_posts()): $loop->the_post();
+      $title = get_the_title();
+      $price = function_exists('get_field') ? get_field('price') : '';
+      $cover = function_exists('get_field') ? get_field('cover') : null;
+      $rat   = function_exists('omniora_get_product_testimonial_rating')
+        ? omniora_get_product_testimonial_rating(get_the_ID())
+        : ['avg'=>0,'count'=>0,'stars'=>''];
+    ?>
+      <div class="product-card">
+        <div class="product-image">
+          <?php
+          if (!empty($cover['url'])) {
+            echo '<img src="'.esc_url($cover['url']).'" alt="'.esc_attr($title).'">';
+          } elseif (has_post_thumbnail()) {
+            the_post_thumbnail('medium_large', ['alt' => $title]);
+          } else {
+            $noimg = function_exists('pll__') ? pll__('No image') : __('No image','omniora');
+            echo '<div class="img-placeholder">'.esc_html($noimg).'</div>';
+          }
+          ?>
+        </div>
 
-<?php if($loop->have_posts()): ?>
-    <?php while($loop->have_posts()): $loop->the_post() ?>
-    
-    <?php 
-                $title = get_the_title();
-                $price = get_field('price');
-                $cover = get_field('cover');
-                
-                ?>
+        <div class="product-info">
+          <h3><a href="<?php the_permalink(); ?>"><?php echo esc_html($title); ?></a></h3>
 
-            <div class="product-card">
-                    <div class="product-image">
-                    <img src="<?php echo esc_url($cover["url"])?>" alt="ASICS Gel-Kayano 32"> 
-                    </div>
-                    <div class="product-info">
-                    <h3><?php echo esc_html($title); ?></h3>
-                    <div class="price">
-                        <span class="current"><?php echo esc_html($price); ?> kr.</span>
-                    </div>
-                    <div class="member-price">BUY NOW</div>
-                    </div>
-                    
+          <?php if (!empty($rat['count'])): ?>
+            <div class="p-rating" aria-label="<?php
+              echo esc_attr( sprintf(
+                function_exists('pll__') ? pll__('Rating %1$.1f / 5 from %2$d testimonials') : __('Rating %1$.1f / 5 from %2$d testimonials','omniora'),
+                $rat['avg'],
+                $rat['count']
+              ) );
+            ?>">
+              <span class="p-stars"><?php echo esc_html($rat['stars']); ?></span>
+              <span class="p-count">(<?php echo (int)$rat['count']; ?>)</span>
             </div>
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
+          <?php endif; ?>
 
-    
+          <?php if ($price): ?>
+            <div class="price">
+              <span class="current"><?php echo esc_html( omniora_format_price($price) ); ?></span>
+            </div>
+          <?php endif; ?>
 
-    <?php endwhile; ?>
-<?php endif; ?>
+          <div class="member-price">
+            <a class="btn-buy" href="<?php the_permalink(); ?>">
+              <?php echo function_exists('pll__') ? pll__('BUY NOW') : __('BUY NOW','omniora'); ?>
+            </a>
+          </div>
+        </div>
+      </div>
+    <?php endwhile; wp_reset_postdata(); endif; ?>
+  </div>
 
-
+<?php endwhile; endif; ?>
 <?php get_footer(); ?>
