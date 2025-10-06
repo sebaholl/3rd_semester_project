@@ -58,6 +58,10 @@ $read_blog_text = function_exists('pll__') ? pll__('Read Blog') : __('Read Blog'
         <a class="btn btn--secondary" href="<?php echo esc_url($blog_url); ?>">
           <?php echo esc_html($read_blog_text); ?>
         </a>
+        <!-- Survey CTA -->
+        <a class="btn btn--secondary" href="<?php echo esc_url( function_exists('omniora_get_survey_url') ? omniora_get_survey_url() : home_url('/survey/') ); ?>">
+          <?php echo function_exists('pll__') ? pll__('Take the survey') : __('Take the survey','omniora'); ?>
+        </a>
       </div>
     </div>
     <div class="homepage-hero__image" <?php echo $bgurl ? 'style="background-image:url('.$bgurl.');"' : ''; ?>></div>

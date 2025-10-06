@@ -5,6 +5,9 @@ $permalink = get_permalink($post_id);
 $title     = get_the_title($post_id);
 $excerpt   = wp_trim_words(get_the_excerpt($post_id), 26);
 
+// Survey URL (language-aware if helper exists)
+$survey_url = function_exists('omniora_get_survey_url') ? omniora_get_survey_url() : home_url('/survey/');
+
 $img_html = '';
 
 // 1) Featured image
@@ -75,9 +78,15 @@ $tags = get_the_terms($post_id, 'post_tag');
 
     <p class="post-card__excerpt"><?php echo esc_html($excerpt); ?></p>
 
-    <a class="btn btn--dark" href="<?php echo esc_url($permalink); ?>">
-      <?php echo function_exists('pll__') ? pll__('Read') : __('Read','omniora'); ?>
-    </a>
+    <div class="post-card__actions">
+      <a class="btn btn--dark" href="<?php echo esc_url($permalink); ?>">
+        <?php echo function_exists('pll__') ? pll__('Read') : __('Read','omniora'); ?>
+      </a>
+      <a class="btn btn--outline" href="<?php echo esc_url($survey_url); ?>">
+        <?php echo function_exists('pll__') ? pll__('Take the survey') : __('Take the survey','omniora'); ?>
+      </a>
+    </div>
   </div>
 </article>
+
 
