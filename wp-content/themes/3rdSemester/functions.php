@@ -204,47 +204,112 @@ add_shortcode('testimonials', function($atts){
 
 
 /* Survey */
-add_action('init', function () {
-  if (empty($_POST['omniora_survey_nonce'])) return;
-  if (!wp_verify_nonce($_POST['omniora_survey_nonce'], 'omniora_survey')) return;
-  if (!empty($_POST['website'])) return; 
 
-  $lang = function_exists('pll_current_language') ? pll_current_language('slug') : '';
-  $get  = function($k){ return isset($_POST[$k]) ? wp_unslash($_POST[$k]) : ''; };
+if (!function_exists('omniora_handle_survey_submission')) {
+  function omniora_handle_survey_submission() {
+    if (empty($_POST['omniora_survey_nonce'])) return;
+    if (!wp_verify_nonce($_POST['omniora_survey_nonce'], 'omniora_survey')) return;
+    if (!empty($_POST['website'])) return; 
 
-  $sport    = sanitize_text_field($get('sport'));
-  $level    = sanitize_text_field($get('level'));
-  $terrain  = isset($_POST['terrain']) && is_array($_POST['terrain']) ? array_map('sanitize_text_field', $_POST['terrain']) : [];
-  $width    = sanitize_text_field($get('width'));
-  $budget   = sanitize_text_field($get('budget'));
-  $features = isset($_POST['features']) && is_array($_POST['features']) ? array_map('sanitize_text_field', $_POST['features']) : [];
-  $email    = sanitize_email($get('email'));
-  $consent  = !empty($_POST['consent']) ? 1 : 0;
+    $lang = function_exists('pll_current_language') ? pll_current_language('slug') : '';
+    $get  = function($k){ return isset($_POST[$k]) ? wp_unslash($_POST[$k]) : ''; };
 
-  $title = sprintf('%s %s', __('Survey','omniora'), date_i18n('Y-m-d H:i'));
-  $post_id = wp_insert_post([
-    'post_type'   => 'survey_entry',
-    'post_title'  => $title,
-    'post_status' => 'publish',
-  ]);
+    $sport    = sanitize_text_field($get('sport'));
+    $level    = sanitize_text_field($get('level'));
+    $terrain  = isset($_POST['terrain']) && is_array($_POST['terrain']) ? array_map('sanitize_text_field', $_POST['terrain']) : [];
+    $width    = sanitize_text_field($get('width'));
+    $budget   = sanitize_text_field($get('budget'));
+    $features = isset($_POST['features']) && is_array($_POST['features']) ? array_map('sanitize_text_field', $_POST['features']) : [];
+    $email    = sanitize_email($get('email'));
+    $consent  = !empty($_POST['consent']) ? 1 : 0;
 
-  if ($post_id && !is_wp_error($post_id)) {
-    update_post_meta($post_id, 'sport', $sport);
-    update_post_meta($post_id, 'level', $level);
-    update_post_meta($post_id, 'terrain', implode(', ', $terrain));
-    update_post_meta($post_id, 'width', $width);
-    update_post_meta($post_id, 'budget', $budget);
-    update_post_meta($post_id, 'features', implode(', ', $features));
-    update_post_meta($post_id, 'email', $consent ? $email : '');
-    update_post_meta($post_id, 'consent', $consent);
+    $title = sprintf('%s %s', __('Survey','omniora'), date_i18n('Y-m-d H:i'));
+    $post_id = wp_insert_post([
+      'post_type'   => 'survey_entry',
+      'post_title'  => $title,
+      'post_status' => 'publish',
+    ]);
 
-    if ($lang && function_exists('pll_set_post_language')) {
-      pll_set_post_language($post_id, $lang);
+    if ($post_id && !is_wp_error($post_id)) {
+      update_post_meta($post_id, 'sport', $sport);
+      update_post_meta($post_id, 'level', $level);
+      update_post_meta($post_id, 'terrain', implode(', ', $terrain));
+      update_post_meta($post_id, 'width', $width);
+      update_post_meta($post_id, 'budget', $budget);
+      update_post_meta($post_id, 'features', implode(', ', $features));
+      update_post_meta($post_id, 'email', $consent ? $email : '');
+      update_post_meta($post_id, 'consent', $consent);
+
+      if ($lang && function_exists('pll_set_post_language')) {
+        pll_set_post_language($post_id, $lang);
+      }
     }
-  }
 
-  $redirect = add_query_arg('survey', 'thanks', wp_get_referer() ?: home_url('/'));
-  wp_safe_redirect($redirect);
-  exit;
+    $redirect = add_query_arg('survey', 'thanks', wp_get_referer() ?: home_url('/'));
+    wp_safe_redirect($redirect);
+    exit;
+  }
+  add_action('init', 'omniora_handle_survey_submission');
+}
+
+
+if (!function_exists('omniora_get_survey_url')) {
+  function omniora_get_survey_url() {
+    $url = home_url('/');
+    $pages = get_posts([
+      'post_type'      => 'page',
+      'posts_per_page' => 1,
+      'post_status'    => 'publish',
+      'meta_key'       => '_wp_page_template',
+      'meta_value'     => 'page-survey.php'
+    ]);
+    if ($pages) {
+      $id = $pages[0]->ID;
+      if (function_exists('pll_get_post')) { $tr = pll_get_post($id); if ($tr) $id = $tr; }
+      $url = get_permalink($id);
+    } else {
+      $p = get_page_by_path('survey');
+      if ($p) {
+        $id = $p->ID;
+        if (function_exists('pll_get_post')) { $tr = pll_get_post($id); if ($tr) $id = $tr; }
+        $url = get_permalink($id);
+      }
+    }
+    return esc_url($url);
+  }
+}
+
+
+if (!function_exists('omniora_render_survey_cta')) {
+  function omniora_render_survey_cta($label = '', $class = 'btn btn--dark cta-inline') {
+    if (!$label) $label = function_exists('pll__') ? pll__('Take the survey') : __('Take the survey','omniora');
+    return '<a class="'.esc_attr($class).'" href="'.omniora_get_survey_url().'">'.esc_html($label).'</a>';
+  }
+}
+
+
+if (!function_exists('omniora_register_survey_cta_shortcode')) {
+  function omniora_register_survey_cta_shortcode() {
+    if (function_exists('shortcode_exists') && shortcode_exists('survey_cta')) return;
+    add_shortcode('survey_cta', function($atts){
+      $atts = shortcode_atts(['label'=>'','class'=>'btn btn--dark cta-inline'], $atts, 'survey_cta');
+      $label = $atts['label'] ?: (function_exists('pll__') ? pll__('Take the survey') : __('Take the survey','omniora'));
+      return omniora_render_survey_cta($label, $atts['class']);
+    });
+  }
+  add_action('init', 'omniora_register_survey_cta_shortcode');
+}
+
+
+add_filter('the_content', function($content){
+  if (is_admin() || !is_singular('post')) return $content;
+  return $content . '<p class="post-cta">'.omniora_render_survey_cta().'</p>';
 });
+
+
+if (function_exists('pll_register_string')) {
+  pll_register_string('omniora','Take the survey','theme');
+  pll_register_string('omniora','Help us tailor your gear','theme');
+}
+
 
