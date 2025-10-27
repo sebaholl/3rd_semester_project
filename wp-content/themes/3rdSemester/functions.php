@@ -312,4 +312,29 @@ if (function_exists('pll_register_string')) {
   pll_register_string('omniora','Help us tailor your gear','theme');
 }
 
+// testimonial page
+add_action('acf/save_post', function($post_id){
+  if (get_post_type($post_id) !== 'testimonial') return;
+
+  // Attach to current product (hidden field in the form)
+  if (!empty($_POST['current_product']) && is_numeric($_POST['current_product'])) {
+    $pid = (int) $_POST['current_product'];
+    if (function_exists('update_field')) update_field('related_product', $pid, $post_id);
+    else update_post_meta($post_id, 'related_product', $pid);
+  }
+
+  // Featured image from ACF "avatar" image field (rename if your field key is different)
+  if (function_exists('get_field')) {
+    $img = get_field('avatar', $post_id);
+    $att = is_array($img) ? ($img['ID'] ?? 0) : (is_numeric($img) ? (int)$img : 0);
+    if ($att) set_post_thumbnail($post_id, $att);
+  }
+
+  // Save language
+  if (function_exists('pll_current_language') && function_exists('pll_set_post_language')) {
+    $lang = pll_current_language('slug');
+    if ($lang) pll_set_post_language($post_id, $lang);
+  }
+}, 20);
+
 

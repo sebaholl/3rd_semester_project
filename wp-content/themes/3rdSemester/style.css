@@ -389,7 +389,6 @@ main { padding: 20px 16px; }
 .post-card__body { padding:14px; display:flex; flex-direction:column; gap:10px; }
 .post-card__title { margin:0; font-size:18px; }
 
-
 /* ----------------------------
    Single Post (single.php)
 ----------------------------- */
@@ -439,18 +438,11 @@ main { padding: 20px 16px; }
   color: #222;
   border-radius: 6px;
 }
-.single-article__quote p {
-  margin: 0;
-}
+.single-article__quote p { margin: 0; }
 
 /* Related posts grid */
-.related-posts {
-  margin-top: 40px;
-}
-.related-posts__title {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-}
+.related-posts { margin-top: 40px; }
+.related-posts__title { font-size: 1.5rem; margin-bottom: 16px; }
 .related-posts__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -520,18 +512,10 @@ main { padding: 20px 16px; }
   cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
-
-.comment-form input[type="submit"]:hover {
-  background: #152f63; /* slightly lighter navy */
-}
+.comment-form input[type="submit"]:hover { background: #152f63; }
 
 /* List of comments */
-.comment-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
+.comment-list { list-style: none; margin: 0; padding: 0; }
 .comment-list li {
   margin-bottom: 24px;
   padding: 16px;
@@ -539,34 +523,14 @@ main { padding: 20px 16px; }
   border-radius: 6px;
   background: #fff;
 }
+.comment-author { font-weight: bold; color: #0d2145; }
+.comment-meta { font-size: 13px; color: #777; margin-bottom: 8px; }
+.comment-content { font-size: 15px; line-height: 1.5; }
+.reply a { font-size: 14px; color: #0d2145; font-weight: 600; text-decoration: none; }
+.reply a:hover { text-decoration: underline; }
 
-.comment-author {
-  font-weight: bold;
-  color: #0d2145;
-}
 
-.comment-meta {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 8px;
-}
-
-.comment-content {
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.reply a {
-  font-size: 14px;
-  color: #0d2145;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.reply a:hover {
-  text-decoration: underline;
-}
-
+/* Chips (cats/tags) */
 .chip{display:inline-block;padding:.25rem .6rem;border:1px solid #ddd;border-radius:999px;font-size:.85rem;text-decoration:none;margin:.2rem .25rem 0 0}
 .chip--cat{font-weight:600}
 
@@ -576,20 +540,8 @@ main { padding: 20px 16px; }
 .p-stars { font-size: .95rem; letter-spacing:.05em; }
 .p-count { color:#666; font-size:.9rem; }
 
-/* Testimonials grid/cards (shared) */
-.testimonial-grid { display:grid; gap:1rem; }
-.testimonial-grid.cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-@media (max-width:900px){ .testimonial-grid.cols-3 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-@media (max-width:600px){ .testimonial-grid { grid-template-columns: 1fr; } }
 
-.t-card { border:1px solid #eee; border-radius:12px; padding:1rem; background:#fff; }
-.t-card__media { margin-bottom:.5rem; }
-.t-card__avatar { width:96px; height:96px; border-radius:50%; object-fit:cover; display:block; }
-.t-card__rating { margin-bottom:.25rem; }
-.t-card__quote { color:#333; margin:.5rem 0; }
-.t-card__name { margin:.25rem 0; font-weight:600; }
-
-
+/* Language switcher */
 .lang-switch ul{display:flex;gap:.5rem;margin:0;padding:0;list-style:none}
 .lang-switch a{display:inline-block;padding:.35rem .6rem;border:1px solid #ddd;border-radius:999px;text-decoration:none;font-size:.9rem;line-height:1}
 .lang-switch a:hover{border-color:#333}
@@ -597,8 +549,36 @@ main { padding: 20px 16px; }
 @media (max-width:640px){.lang-switch a{padding:.3rem .5rem;font-size:.85rem}}
 
 
+/* ===============================
+   Global utilities
+   =============================== */
 
-/* Survey form */
+/* Notices (single copy used everywhere) */
+.notice.success { background:#e9f8ee; border:1px solid #b7e4c2; padding:10px 12px; border-radius:10px; }
+.notice.error   { background:#fdebea; border:1px solid #f5b5b1; padding:10px 12px; border-radius:10px; }
+
+/* Outline button (single global copy) */
+.btn--outline {
+  border: 1px solid #111;
+  background: transparent;
+  color: #111;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.btn--outline:hover { background:#111; color:#fff; }
+
+/* Placeholder image (single global copy) */
+.img-placeholder {
+  background: #f4f4f4; color: #666; display: grid; place-items: center;
+  border-radius: 12px; min-height: 260px; font-size: 14px;
+}
+
+
+/* ===============================
+   Survey form
+   =============================== */
+
 .survey-form {
   --bg:#f8f9fb; --border:#e6e8ee; --text:#111; --muted:#6b7280; --focus:#111;
   background:var(--bg); border:1px solid var(--border); border-radius:16px;
@@ -623,19 +603,128 @@ main { padding: 20px 16px; }
 }
 .survey-form .btn:hover{ opacity:.95 } .survey-form .btn:active{ transform:translateY(1px) }
 
-
-/* Survey CTA */
+/* Survey CTA helpers */
 .post-card__actions { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
-.btn--outline:hover { background:#111; color:#fff; }
-.cta-inline { margin-left: 12px; }                    /* header button spacing */
-.survey-banner { text-align: center; margin: 16px 0 24px; }  /* banner above grids */
-.btn--outline {
-  border: 1px solid #111;
-  background: transparent;
-  color: #111;
-  padding: 10px 16px;
-  border-radius: 999px;
-  text-decoration: none;
-}
-.btn--outline:hover { background: #111; color: #fff; }
+.cta-inline { margin-left: 12px; }
+.survey-banner { text-align: center; margin: 16px 0 24px; }
 
+
+/* ================================
+   TESTIMONIALS — form + list (ACF)
+   ================================ */
+
+/* Sections that host reviews */
+.product__review-form,
+.pdp-testimonials { margin-top: 28px; }
+
+/* Headings in those sections */
+.product__review-form .h2,
+.pdp-testimonials .h2 { margin-bottom: 12px; }
+
+/* ACF front-end form */
+.t-form { max-width: 720px; margin: 0 0 24px; }
+.t-form .acf-fields { display: grid; gap: 12px; }
+.t-form .acf-field { padding: 0; border: 0; }
+
+/* Inputs */
+.t-form input[type="text"],
+.t-form input[type="email"],
+.t-form select,
+.t-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+.t-form textarea { min-height: 120px; resize: vertical; }
+
+/* Focus */
+.t-form input:focus,
+.t-form select:focus,
+.t-form textarea:focus {
+  outline: none;
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(17,17,17,.1);
+}
+
+/* Submit button */
+.t-form .acf-submit input[type="submit"] {
+  appearance: none;
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .06s ease, opacity .15s ease, background .15s ease;
+}
+.t-form .acf-submit input[type="submit"]:hover { opacity: .9; }
+.t-form .acf-submit input[type="submit"]:active { transform: translateY(1px); }
+
+/* Radio/checkbox groups (rating, consent) */
+.acf-input .acf-radio-list,
+.acf-input .acf-checkbox-list { display: flex; gap: 10px; flex-wrap: wrap; }
+.acf-input .acf-radio-list label,
+.acf-input .acf-checkbox-list label {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #f7f7f7; padding: 6px 10px; border-radius: 999px;
+  cursor: pointer;
+}
+.acf-input .acf-radio-list input,
+.acf-input .acf-checkbox-list input { accent-color: #111; }
+
+/* ===== Responsive grid ===== */
+.testimonial-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* If utility classes are used anywhere, normalize them too */
+.testimonial-grid.cols-2,
+.testimonial-grid.cols-3,
+.testimonial-grid.cols-4 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ===== Card ===== */
+.t-card {
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.04);
+  transition: box-shadow .15s ease, transform .06s ease;
+}
+.t-card:hover { box-shadow: 0 10px 24px rgba(0,0,0,.07); transform: translateY(-1px); }
+
+/* Avatar (optional) */
+.t-card__media { width: 64px; height: 64px; margin-bottom: 6px; }
+.t-card__avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+
+/* Body */
+.t-card__body { display: grid; gap: 6px; }
+
+/* Stars row */
+.t-card__rating { color: #f5b301; font-size: 15px; margin-bottom: 6px; letter-spacing: .5px; }
+
+/* Quote with subtle decorative quote mark */
+.t-card__quote { position: relative; margin: 6px 0 10px; }
+.t-card__quote p { margin: 0; color: #222; line-height: 1.6; font-size: 15px; }
+.t-card__quote::before {
+  content: "“";
+  position: absolute; left: -14px; top: -6px;
+  font-size: 28px; line-height: 1; color: #d7dde8;
+}
+
+/* Name/product line */
+.t-card__name { margin: 8px 0 0; font-weight: 700; font-size: 14px; color: #0d2145; }
+
+/* Anchor offset for #write-review */
+#write-review { scroll-margin-top: 80px; }
+
+/* Homepage testimonials tweaks */
+.section--testimonials .section-head { margin-bottom: 12px; }
+.section--testimonials .btn--dark { padding:10px 16px; border-radius:999px; }

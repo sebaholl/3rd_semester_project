@@ -74,6 +74,57 @@ $path = get_stylesheet_directory() . '/home-blog-template.php';
 if ( file_exists( $path ) ) { include $path; }
 ?>
 
+
+<?php
+/* =======================
+   HOMEPAGE: Testimonials
+   ======================= */
+?>
+<section class="section section--testimonials" style="margin-top:32px;">
+  <div class="container">
+    <header class="section-head" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between;">
+      <h2 class="h2" style="margin:0;">
+        <?php echo function_exists('pll__') ? pll__('What customers say') : __('What customers say','omniora'); ?>
+      </h2>
+
+      <?php
+      // Optional CTAs: "Write a review" + (if you have it) "All testimonials" page
+      // Resolve "submit-testimonial" page per language, if it exists
+      $submit = get_page_by_path('submit-testimonial');
+      if ($submit && function_exists('pll_get_post')) {
+        $submit = get_post(pll_get_post($submit->ID));
+      }
+      $submit_url = $submit ? get_permalink($submit->ID) : '#';
+
+      // Resolve "testimonials" listing page per language, if you created one
+      $all = get_page_by_path('testimonials');
+      if ($all && function_exists('pll_get_post')) {
+        $all = get_post(pll_get_post($all->ID));
+      }
+      $all_url = $all ? get_permalink($all->ID) : '';
+      ?>
+      <div class="section-ctas" style="display:flex;gap:10px;flex-wrap:wrap;">
+        <?php if ($all_url): ?>
+          <a class="btn btn--outline" href="<?php echo esc_url($all_url); ?>">
+            <?php echo function_exists('pll__') ? pll__('All testimonials') : __('All testimonials','omniora'); ?>
+          </a>
+        <?php endif; ?>
+        <?php if ($submit_url && $submit_url !== '#'): ?>
+          <a class="btn btn--dark" href="<?php echo esc_url($submit_url); ?>">
+            <?php echo function_exists('pll__') ? pll__('Write a review') : __('Write a review','omniora'); ?>
+          </a>
+        <?php endif; ?>
+      </div>
+    </header>
+
+    <?php
+      // Render latest testimonials in current language
+      echo do_shortcode('[testimonials limit="6" columns="3"]');
+    ?>
+  </div>
+</section>
+
+
 <?php get_footer(); ?>
 
 
