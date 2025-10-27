@@ -1,0 +1,805 @@
+0000.000 (0) Opened log file at time: Mon, 06 Oct 2025 08:57:35 +0000 on http://3rdsemesterproject.local
+0000.037 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.7 WP: 6.8.3 PHP: 8.2.27 (fpm-fcgi, Darwin Cliftons-MacBook-Pro.local 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000 arm64) MySQL: 8.0.43-34 (max packet size=104857600) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 5.8M | 8M) multisite: N openssl: OpenSSL 3.4.1 11 Feb 2025 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.050 (0) Free space on disk containing Updraft's temporary directory: 77365.4 MB
+0000.086 (0) Tasks: Backup files: 1 (schedule: manual) Backup DB: 1 (schedule: manual)
+0000.114 (0) Semaphore (fd, wp_options) being initialised
+0000.167 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.214 (0) Set semaphore last lock (fd) time to 2025-10-06 08:57:35
+0000.224 (0) Semaphore lock (fd) complete
+0000.283 (0) Backup run: resumption=0, nonce=dac2264e37ef, file_nonce=dac2264e37ef begun at=1759741055 (0s ago), job type=backup
+0000.319 (0) Scheduling a resumption (1) after 300 seconds (1759741355) in case this run gets aborted
+0000.372 (0) Checking if we have a zip executable available
+0000.383 (0) Testing: /usr/bin/zip
+0000.409 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.420 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.431 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.444 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.455 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.486 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.497 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.509 (0) Working binary zip found: /usr/bin/zip
+0000.530 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.541 (0) Creation of backups of directories: beginning
+0000.578 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.845 (0) Total entities for the zip file: 1749 directories, 9901 files (0 skipped as non-modified), 132.2 MB
+0000.859 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.870 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.882 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.893 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.905 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.917 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0000.929 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0000.943 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 800 files added (on-disk size: 0 KB)
+0000.954 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 900 files added (on-disk size: 0 KB)
+0000.965 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25 MB, 9901 files batched, 955 (955) added so far); re-opening (prior size: 0 KB)
+0001.619 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: size is now: 7.50 MB
+0001.644 (0) A useful amount of data was added after this amount of zip processing: 1.7 s (normalised: 1.7 s, rate: 14913.1 KB/s)
+0001.665 (0) Performance is good - will increase the amount of data we attempt to batch (time=1.7172389030457, normalised_time=1.7166067922453, max_time=1.6534640789032, data points known=1, old_max_bytes=26214400, new_max_bytes=91626341)
+0001.689 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1000 files added (on-disk size: 7669 KB)
+0001.701 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1100 files added (on-disk size: 7669 KB)
+0001.714 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1200 files added (on-disk size: 7669 KB)
+0001.727 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1300 files added (on-disk size: 7669 KB)
+0001.740 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1400 files added (on-disk size: 7669 KB)
+0001.752 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1500 files added (on-disk size: 7669 KB)
+0001.766 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1600 files added (on-disk size: 7669 KB)
+0001.779 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1700 files added (on-disk size: 7669 KB)
+0001.792 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1800 files added (on-disk size: 7669 KB)
+0001.805 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 1900 files added (on-disk size: 7669 KB)
+0001.818 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (13.7 MB, 9901 files batched, 1001 (1956) added so far); re-opening (prior size: 7669 KB)
+0002.069 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: size is now: 14.20 MB
+0002.092 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2000 files added (on-disk size: 14492 KB)
+0002.102 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2100 files added (on-disk size: 14492 KB)
+0002.115 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2200 files added (on-disk size: 14492 KB)
+0002.126 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2300 files added (on-disk size: 14492 KB)
+0002.140 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2400 files added (on-disk size: 14492 KB)
+0002.152 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2500 files added (on-disk size: 14492 KB)
+0002.164 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2600 files added (on-disk size: 14492 KB)
+0002.178 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2700 files added (on-disk size: 14492 KB)
+0002.192 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2800 files added (on-disk size: 14492 KB)
+0002.205 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 2900 files added (on-disk size: 14492 KB)
+0002.216 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (7.5 MB, 9901 files batched, 1001 (2957) added so far); re-opening (prior size: 14492 KB)
+0002.437 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: size is now: 17.40 MB
+0002.463 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3000 files added (on-disk size: 17823.2 KB)
+0002.480 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3100 files added (on-disk size: 17823.2 KB)
+0002.491 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3200 files added (on-disk size: 17823.2 KB)
+0002.503 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3300 files added (on-disk size: 17823.2 KB)
+0002.515 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3400 files added (on-disk size: 17823.2 KB)
+0002.527 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3500 files added (on-disk size: 17823.2 KB)
+0002.539 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3600 files added (on-disk size: 17823.2 KB)
+0002.550 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3700 files added (on-disk size: 17823.2 KB)
+0002.563 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3800 files added (on-disk size: 17823.2 KB)
+0002.578 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 3900 files added (on-disk size: 17823.2 KB)
+0002.590 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (12 MB, 9901 files batched, 1001 (3958) added so far); re-opening (prior size: 17823.2 KB)
+0002.902 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: size is now: 21.10 MB
+0002.925 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4000 files added (on-disk size: 21605.9 KB)
+0002.939 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4100 files added (on-disk size: 21605.9 KB)
+0002.952 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4200 files added (on-disk size: 21605.9 KB)
+0002.964 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4300 files added (on-disk size: 21605.9 KB)
+0002.979 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4400 files added (on-disk size: 21605.9 KB)
+0002.992 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4500 files added (on-disk size: 21605.9 KB)
+0003.003 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4600 files added (on-disk size: 21605.9 KB)
+0003.016 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4700 files added (on-disk size: 21605.9 KB)
+0003.030 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4800 files added (on-disk size: 21605.9 KB)
+0003.043 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 4900 files added (on-disk size: 21605.9 KB)
+0003.056 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (5.3 MB, 9901 files batched, 1001 (4959) added so far); re-opening (prior size: 21605.9 KB)
+0003.244 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5000 files added (on-disk size: 23317 KB)
+0003.255 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5100 files added (on-disk size: 23317 KB)
+0003.267 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5200 files added (on-disk size: 23317 KB)
+0003.278 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5300 files added (on-disk size: 23317 KB)
+0003.292 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5400 files added (on-disk size: 23317 KB)
+0003.305 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5500 files added (on-disk size: 23317 KB)
+0003.316 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5600 files added (on-disk size: 23317 KB)
+0003.327 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5700 files added (on-disk size: 23317 KB)
+0003.339 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5800 files added (on-disk size: 23317 KB)
+0003.351 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 5900 files added (on-disk size: 23317 KB)
+0003.363 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (5.8 MB, 9901 files batched, 1001 (5960) added so far); re-opening (prior size: 23317 KB)
+0003.555 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6000 files added (on-disk size: 25120 KB)
+0003.567 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6100 files added (on-disk size: 25120 KB)
+0003.581 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6200 files added (on-disk size: 25120 KB)
+0003.593 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6300 files added (on-disk size: 25120 KB)
+0003.605 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6400 files added (on-disk size: 25120 KB)
+0003.618 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6500 files added (on-disk size: 25120 KB)
+0003.631 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6600 files added (on-disk size: 25120 KB)
+0003.644 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6700 files added (on-disk size: 25120 KB)
+0003.656 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6800 files added (on-disk size: 25120 KB)
+0003.670 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 6900 files added (on-disk size: 25120 KB)
+0003.683 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (20.2 MB, 9901 files batched, 1001 (6961) added so far); re-opening (prior size: 25120 KB)
+0004.336 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: size is now: 30.90 MB
+0004.358 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7000 files added (on-disk size: 31676.5 KB)
+0004.370 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7100 files added (on-disk size: 31676.5 KB)
+0004.381 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7200 files added (on-disk size: 31676.5 KB)
+0004.394 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7300 files added (on-disk size: 31676.5 KB)
+0004.405 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7400 files added (on-disk size: 31676.5 KB)
+0004.419 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7500 files added (on-disk size: 31676.5 KB)
+0004.431 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7600 files added (on-disk size: 31676.5 KB)
+0004.443 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7700 files added (on-disk size: 31676.5 KB)
+0004.455 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7800 files added (on-disk size: 31676.5 KB)
+0004.466 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 7900 files added (on-disk size: 31676.5 KB)
+0004.477 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (9.9 MB, 9901 files batched, 1001 (7962) added so far); re-opening (prior size: 31676.5 KB)
+0004.764 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8000 files added (on-disk size: 34823.2 KB)
+0004.774 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8100 files added (on-disk size: 34823.2 KB)
+0004.786 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8200 files added (on-disk size: 34823.2 KB)
+0004.798 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8300 files added (on-disk size: 34823.2 KB)
+0004.809 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8400 files added (on-disk size: 34823.2 KB)
+0004.822 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8500 files added (on-disk size: 34823.2 KB)
+0004.833 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8600 files added (on-disk size: 34823.2 KB)
+0004.845 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8700 files added (on-disk size: 34823.2 KB)
+0004.856 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8800 files added (on-disk size: 34823.2 KB)
+0004.869 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 8900 files added (on-disk size: 34823.2 KB)
+0004.881 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (23.6 MB, 9901 files batched, 1001 (8963) added so far); re-opening (prior size: 34823.2 KB)
+0005.484 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9000 files added (on-disk size: 41753.9 KB)
+0005.495 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9100 files added (on-disk size: 41753.9 KB)
+0005.505 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9200 files added (on-disk size: 41753.9 KB)
+0005.517 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9300 files added (on-disk size: 41753.9 KB)
+0005.529 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9400 files added (on-disk size: 41753.9 KB)
+0005.542 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9500 files added (on-disk size: 41753.9 KB)
+0005.555 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9600 files added (on-disk size: 41753.9 KB)
+0005.566 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9700 files added (on-disk size: 41753.9 KB)
+0005.577 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9800 files added (on-disk size: 41753.9 KB)
+0005.589 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.tmp: 9900 files added (on-disk size: 41753.9 KB)
+0005.949 (0) Creating zip file manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.list-temp.tmp)
+0005.977 (0) Successfully created zip file manifest (size: 876899)
+0006.466 (0) Created plugins zip (0) - 45235.4 KB in 5.9 s (7716.3 KB/s) (sha1: 5c725c0d58a370cbe9e4c327da452fd49b3a68c4, sha256: 2cd6ffd45b7d3f0b30324fa27a3fcaa2452795b06d35f68f5eef85f91d43dc0d)
+0006.501 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0006.523 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-9e66e4a1fb500b895cdafd55a90ef0b9)
+0007.427 (0) Google Drive: creating path: /UpdraftPlus
+0008.846 (0) Google Drive: quota usage: used=0 MB, total=15360 MB, available=15360 MB
+0008.858 (0) Google Drive: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip: Attempting to upload to Google Drive (into folder id: 1mFhwCpImmlQm4qSv18JcnkNF2wJULSr2)
+0010.067 (0) Googledrive chunked upload: 2.3 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 7.7 / 22)
+0010.650 (0) Googledrive chunked upload: 6.8 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 7.7 / 22)
+0011.301 (0) Googledrive chunked upload: 15.8 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 7.7 / 22)
+0016.054 (0) Googledrive chunked upload: 34 % uploaded (15728640)
+0017.321 (0) Googledrive chunked upload: 52.1 % uploaded (24117248 - increasing chunk size to 16384 KB - memory usage: 7.7 / 22)
+0019.131 (0) Googledrive chunked upload: 88.3 % uploaded (40894464 - increasing chunk size to 32768 KB - memory usage: 7.7 / 22)
+0020.979 (0) Googledrive chunked upload: 100 % uploaded (40894464)
+0021.015 (0) Google Drive: OK: Archive backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip uploaded in 12.14 seconds
+0021.040 (0) Recording as successfully uploaded: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip
+0021.065 (0) Deleting local file: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip: OK
+0021.115 (0) Beginning creation of dump of themes (split every: 400 MB)
+0021.166 (0) Total entities for the zip file: 53 directories, 412 files (0 skipped as non-modified), 13.9 MB
+0021.182 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0021.195 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0021.210 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0021.224 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0021.588 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip.tmp: size is now: 12.90 MB
+0021.613 (0) Creating zip file manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip.list-temp.tmp)
+0021.626 (0) Successfully created zip file manifest (size: 28796)
+0021.802 (0) Created themes zip (0) - 13212.1 KB in 0.7 s (19977.4 KB/s) (sha1: e8e7e41780a4c1d7f2f14183619eb251ce15758d, sha256: ff072bae9ffe36af1fcded56e5bdd6c554479720448b28a9663ccab28f6421c2)
+0021.835 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0021.846 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-9e66e4a1fb500b895cdafd55a90ef0b9)
+0022.260 (0) Google Drive: quota usage: used=44.2 MB, total=15360 MB, available=15315.8 MB
+0022.272 (0) Google Drive: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip: Attempting to upload to Google Drive (into folder id: 1mFhwCpImmlQm4qSv18JcnkNF2wJULSr2)
+0023.546 (0) Googledrive chunked upload: 7.8 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 6.1 / 20)
+0024.073 (0) Googledrive chunked upload: 23.3 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 6.1 / 20)
+0024.708 (0) Googledrive chunked upload: 54.3 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 6.1 / 20)
+0026.744 (0) Googledrive chunked upload: 100 % uploaded (7340032)
+0026.797 (0) Google Drive: OK: Archive backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip uploaded in 4.51 seconds
+0026.824 (0) Recording as successfully uploaded: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip
+0026.893 (0) Deleting local file: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip: OK
+0026.978 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots,wp-staging
+0026.993 (0) Looking for candidates to backup in: /Users/cliftonbenjamin/Local Sites/3rdsemesterproject/app/public/wp-content/uploads
+0027.013 (0) finding files: 2025: adding to list (1)
+0027.027 (0) finding files: woocommerce-placeholder-300x300.webp: adding to list (2)
+0027.043 (0) finding files: mailpoet: adding to list (3)
+0027.067 (0) finding files: woocommerce-placeholder-1024x1024.webp: adding to list (4)
+0027.094 (0) finding files: rank-math: adding to list (5)
+0027.120 (0) finding files: woocommerce-placeholder.webp: adding to list (6)
+0027.131 (0) finding files: woocommerce-placeholder-768x768.webp: adding to list (7)
+0027.143 (0) finding files: wc-logs: adding to list (8)
+0027.165 (0) finding files: fonts: adding to list (9)
+0027.176 (0) finding files: woocommerce-placeholder-150x150.webp: adding to list (10)
+0027.188 (0) finding files: woocommerce_uploads: adding to list (11)
+0027.212 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0027.250 (0) Total entities for the zip file: 9 directories, 162 files (0 skipped as non-modified), 36.7 MB
+0027.271 (0) Zip: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0027.476 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip.tmp: size is now: 36.60 MB
+0027.506 (0) Creating zip file manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip.list-temp.tmp)
+0027.516 (0) Successfully created zip file manifest (size: 11080)
+0027.947 (0) Created uploads zip (0) - 37489.1 KB in 0.7 s (53554.9 KB/s) (sha1: c1900be83b18aee54da5862e4a6a5b90643e2fef, sha256: ba7ef19f95fd86ce4e486757b0f04d24e7a46c6a101aec1b3c08b730adea5811)
+0027.988 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0028.000 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-9e66e4a1fb500b895cdafd55a90ef0b9)
+0028.437 (0) Google Drive: quota usage: used=57.1 MB, total=15360 MB, available=15302.9 MB
+0028.448 (0) Google Drive: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip: Attempting to upload to Google Drive (into folder id: 1mFhwCpImmlQm4qSv18JcnkNF2wJULSr2)
+0029.652 (0) Googledrive chunked upload: 2.7 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 6.1 / 20)
+0030.690 (0) Googledrive chunked upload: 8.2 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 6.1 / 20)
+0032.812 (0) Googledrive chunked upload: 19.1 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 6.1 / 20)
+0038.220 (0) Googledrive chunked upload: 41 % uploaded (15728640)
+0039.027 (0) Googledrive chunked upload: 62.8 % uploaded (24117248 - increasing chunk size to 16384 KB - memory usage: 6.1 / 20)
+0041.228 (0) Googledrive chunked upload: 100 % uploaded (24117248)
+0041.262 (0) Google Drive: OK: Archive backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip uploaded in 12.8 seconds
+0041.300 (0) Recording as successfully uploaded: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip
+0041.330 (0) Deleting local file: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip: OK
+0041.355 (0) No backup of mu-plugins: excluded by user's options
+0041.376 (0) Beginning backup of other directories found in the content directory (index: 0)
+0041.387 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0041.397 (0) Looking for candidates to backup in: /Users/cliftonbenjamin/Local Sites/3rdsemesterproject/app/public/wp-content
+0041.407 (0) finding files: upgrade: skipping: excluded by options
+0041.419 (0) finding files: index.php: adding to list (1)
+0041.430 (0) finding files: upgrade-temp-backup: adding to list (2)
+0041.442 (0) finding files: cache: skipping: excluded by options
+0041.452 (0) finding files: plugins: skipping: this is the plugins directory
+0041.464 (0) finding files: uploads: skipping: this is the uploads directory
+0041.476 (0) finding files: updraft: skipping: this is the updraft directory
+0041.488 (0) finding files: advanced-cache.php: adding to list (3)
+0041.498 (0) finding files: languages: adding to list (4)
+0041.509 (0) finding files: wp-cache-config.php: adding to list (5)
+0041.518 (0) finding files: themes: skipping: this is the themes directory
+0041.531 (0) finding files: jetpack-waf: adding to list (6)
+0041.563 (0) Total entities for the zip file: 5 directories, 81 files (0 skipped as non-modified), 3.8 MB
+0041.717 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip.tmp: size is now: 1.10 MB
+0041.765 (0) Creating zip file manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip.list-temp.tmp)
+0041.776 (0) Successfully created zip file manifest (size: 4674)
+0042.075 (0) Created others zip (0) - 1127.2 KB in 0.5 s (2220.6 KB/s) (sha1: a6f13006e6f6320d0f2bff470b50e2b5bb1b36a5, sha256: fd52a5d3e2a581932e8b1ddffc0d0f2f019870ea67cf60429e2cf1a0372d9074)
+0042.110 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0042.120 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-9e66e4a1fb500b895cdafd55a90ef0b9)
+0042.558 (0) Google Drive: quota usage: used=57.1 MB, total=15360 MB, available=15302.9 MB
+0042.569 (0) Google Drive: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip: Attempting to upload to Google Drive (into folder id: 1mFhwCpImmlQm4qSv18JcnkNF2wJULSr2)
+0044.131 (0) Googledrive chunked upload: 90.8 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 6 / 20)
+0045.724 (0) Googledrive chunked upload: 100 % uploaded (1048576)
+0045.761 (0) Google Drive: OK: Archive backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip uploaded in 3.18 seconds
+0045.786 (0) Recording as successfully uploaded: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip
+0045.813 (0) Deleting local file: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip: OK
+0045.980 (0) Saving backup status to database (elements: 8)
+0046.042 (0) Beginning creation of database dump (WordPress DB)
+0046.076 (0) SQL compatibility mode is: NO_ENGINE_SUBSTITUTION
+0046.234 (0) Table wp_options: Total expected rows (via COUNT): 541
+0046.666 (0) Table wp_options: Rows added in this batch (next record: 2758): 537 (uncompressed bytes in this segment=1308374) in 0.49 seconds
+0046.710 (0) Table wp_options: finishing file(s) (2, 259.3 KB)
+0046.780 (0) Table wp_users: Total expected rows (via COUNT): 1
+0046.790 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0047.049 (0) Table wp_users: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1410) in 0.31 seconds
+0047.093 (0) Table wp_users: finishing file(s) (2, 0.6 KB)
+0047.194 (0) Table wp_usermeta: Total expected rows (via COUNT): 45
+0047.204 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0047.253 (0) Table wp_usermeta: Rows added in this batch (next record: 47): 45 (uncompressed bytes in this segment=5577) in 0.12 seconds
+0047.304 (0) Table wp_usermeta: finishing file(s) (2, 2.1 KB)
+0047.394 (0) Table wp_actionscheduler_actions: Total expected rows (via COUNT): 297
+0047.405 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0047.532 (0) Table wp_actionscheduler_actions: Rows added in this batch (next record: 323): 297 (uncompressed bytes in this segment=138759) in 0.20 seconds
+0047.581 (0) Table wp_actionscheduler_actions: finishing file(s) (2, 10.3 KB)
+0047.649 (0) Table wp_actionscheduler_claims: Total expected rows (via COUNT): 0
+0047.684 (0) Table wp_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=621) in 0.07 seconds
+0047.726 (0) Table wp_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0048.025 (0) Table wp_actionscheduler_groups: Total expected rows (via COUNT): 8
+0048.035 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0048.087 (0) Table wp_actionscheduler_groups: Rows added in this batch (next record: 8): 8 (uncompressed bytes in this segment=828) in 0.31 seconds
+0048.137 (0) Table wp_actionscheduler_groups: finishing file(s) (2, 0.5 KB)
+0048.212 (0) Table wp_actionscheduler_logs: Total expected rows (via COUNT): 876
+0048.673 (0) Table wp_actionscheduler_logs: Rows added in this batch (next record: 886): 876 (uncompressed bytes in this segment=98716) in 0.50 seconds
+0048.714 (0) Table wp_actionscheduler_logs: finishing file(s) (2, 8.9 KB)
+0048.816 (0) Table wp_commentmeta: Total expected rows (via COUNT): 0
+0048.851 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=677) in 0.10 seconds
+0048.900 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0048.973 (0) Table wp_comments: Total expected rows (via COUNT): 1
+0048.985 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.035 (0) Table wp_comments: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=2165) in 0.10 seconds
+0049.075 (0) Table wp_comments: finishing file(s) (2, 0.8 KB)
+0049.147 (0) Table wp_links: Total expected rows (via COUNT): 0
+0049.181 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1298) in 0.07 seconds
+0049.219 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0049.319 (0) Table wp_postmeta: Total expected rows (via COUNT): 598
+0049.330 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.450 (0) Table wp_postmeta: Rows added in this batch (next record: 706): 598 (uncompressed bytes in this segment=56052) in 0.19 seconds
+0049.501 (0) Table wp_postmeta: finishing file(s) (2, 9.2 KB)
+0049.595 (0) Table wp_posts: Total expected rows (via COUNT): 207
+0049.607 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.807 (0) Table wp_posts: Rows added in this batch (next record: 227): 207 (uncompressed bytes in this segment=218726) in 0.28 seconds
+0049.858 (0) Table wp_posts: finishing file(s) (2, 27 KB)
+0049.917 (0) Table wp_term_relationships: Total expected rows (approximate): 7
+0049.966 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 128 (uncompressed bytes in this segment=2447) in 0.07 seconds
+0050.002 (0) Table wp_term_relationships: finishing file(s) (2, 0.7 KB)
+0050.099 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 82
+0050.110 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0050.157 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 85): 82 (uncompressed bytes in this segment=6346) in 0.12 seconds
+0050.212 (0) Table wp_term_taxonomy: finishing file(s) (2, 2 KB)
+0050.306 (0) Table wp_termmeta: Total expected rows (via COUNT): 0
+0050.339 (0) Table wp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=650) in 0.09 seconds
+0050.386 (0) Table wp_termmeta: finishing file(s) (2, 0.4 KB)
+0050.456 (0) Table wp_terms: Total expected rows (via COUNT): 82
+0050.468 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0050.517 (0) Table wp_terms: Rows added in this batch (next record: 85): 82 (uncompressed bytes in this segment=4309) in 0.10 seconds
+0050.556 (0) Table wp_terms: finishing file(s) (2, 1.5 KB)
+0050.646 (0) Table wp_gla_ads_recommendations: Total expected rows (via COUNT): 0
+0050.681 (0) Table wp_gla_ads_recommendations: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1166) in 0.09 seconds
+0050.723 (0) Table wp_gla_ads_recommendations: finishing file(s) (2, 0.4 KB)
+0050.811 (0) Table wp_gla_attribute_mapping_rules: Total expected rows (via COUNT): 0
+0050.833 (0) Table wp_gla_attribute_mapping_rules: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=778) in 0.07 seconds
+0050.874 (0) Table wp_gla_attribute_mapping_rules: finishing file(s) (2, 0.4 KB)
+0050.948 (0) Table wp_gla_budget_recommendations: Total expected rows (approximate): 4230
+0051.065 (0) Table wp_gla_budget_recommendations: Rows added in this batch (next record: 4230): 4230 (uncompressed bytes in this segment=113887) in 0.15 seconds
+0051.105 (0) Table wp_gla_budget_recommendations: finishing file(s) (2, 23.9 KB)
+0051.199 (0) Table wp_gla_merchant_issues: Total expected rows (via COUNT): 0
+0051.225 (0) Table wp_gla_merchant_issues: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1153) in 0.08 seconds
+0051.267 (0) Table wp_gla_merchant_issues: finishing file(s) (2, 0.4 KB)
+0051.375 (0) Table wp_gla_merchant_price_benchmarks: Total expected rows (via COUNT): 0
+0051.402 (0) Table wp_gla_merchant_price_benchmarks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=2042) in 0.09 seconds
+0051.448 (0) Table wp_gla_merchant_price_benchmarks: finishing file(s) (2, 0.6 KB)
+0051.534 (0) Table wp_gla_shipping_rates: Total expected rows (via COUNT): 0
+0051.557 (0) Table wp_gla_shipping_rates: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=725) in 0.07 seconds
+0051.593 (0) Table wp_gla_shipping_rates: finishing file(s) (2, 0.4 KB)
+0051.681 (0) Table wp_gla_shipping_times: Total expected rows (via COUNT): 0
+0051.702 (0) Table wp_gla_shipping_times: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=622) in 0.07 seconds
+0051.739 (0) Table wp_gla_shipping_times: finishing file(s) (2, 0.4 KB)
+0051.836 (0) Table wp_mailpoet_automation_run_logs: Total expected rows (via COUNT): 0
+0051.864 (0) Table wp_mailpoet_automation_run_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1228) in 0.09 seconds
+0051.919 (0) Table wp_mailpoet_automation_run_logs: finishing file(s) (2, 0.5 KB)
+0052.016 (0) Table wp_mailpoet_automation_run_subjects: Total expected rows (via COUNT): 0
+0052.039 (0) Table wp_mailpoet_automation_run_subjects: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=839) in 0.09 seconds
+0052.091 (0) Table wp_mailpoet_automation_run_subjects: finishing file(s) (2, 0.4 KB)
+0052.162 (0) Table wp_mailpoet_automation_runs: Total expected rows (via COUNT): 0
+0052.184 (0) Table wp_mailpoet_automation_runs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1099) in 0.06 seconds
+0052.222 (0) Table wp_mailpoet_automation_runs: finishing file(s) (2, 0.5 KB)
+0052.280 (0) Table wp_mailpoet_automation_triggers: Total expected rows (approximate): 0
+0052.303 (0) Table wp_mailpoet_automation_triggers: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=606) in 0.05 seconds
+0052.344 (0) Table wp_mailpoet_automation_triggers: finishing file(s) (2, 0.3 KB)
+0052.435 (0) Table wp_mailpoet_automation_versions: Total expected rows (via COUNT): 0
+0052.458 (0) Table wp_mailpoet_automation_versions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=781) in 0.08 seconds
+0052.507 (0) Table wp_mailpoet_automation_versions: finishing file(s) (2, 0.4 KB)
+0052.605 (0) Table wp_mailpoet_automations: Total expected rows (via COUNT): 0
+0052.634 (0) Table wp_mailpoet_automations: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=896) in 0.10 seconds
+0052.687 (0) Table wp_mailpoet_automations: finishing file(s) (2, 0.4 KB)
+0052.792 (0) Table wp_mailpoet_custom_fields: Total expected rows (via COUNT): 0
+0052.818 (0) Table wp_mailpoet_custom_fields: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=827) in 0.09 seconds
+0052.872 (0) Table wp_mailpoet_custom_fields: finishing file(s) (2, 0.4 KB)
+0052.938 (0) Table wp_mailpoet_dynamic_segment_filters: Total expected rows (via COUNT): 0
+0052.962 (0) Table wp_mailpoet_dynamic_segment_filters: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=914) in 0.06 seconds
+0053.003 (0) Table wp_mailpoet_dynamic_segment_filters: finishing file(s) (2, 0.4 KB)
+0053.071 (0) Table wp_mailpoet_feature_flags: Total expected rows (via COUNT): 0
+0053.094 (0) Table wp_mailpoet_feature_flags: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=740) in 0.06 seconds
+0053.131 (0) Table wp_mailpoet_feature_flags: finishing file(s) (2, 0.4 KB)
+0053.220 (0) Table wp_mailpoet_forms: Total expected rows (via COUNT): 0
+0053.243 (0) Table wp_mailpoet_forms: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=908) in 0.08 seconds
+0053.290 (0) Table wp_mailpoet_forms: finishing file(s) (2, 0.4 KB)
+0053.377 (0) Table wp_mailpoet_log: Total expected rows (via COUNT): 0
+0053.402 (0) Table wp_mailpoet_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=737) in 0.08 seconds
+0053.669 (0) Table wp_mailpoet_log: finishing file(s) (2, 0.4 KB)
+0053.737 (0) Table wp_mailpoet_migrations: Total expected rows (via COUNT): 36
+0053.748 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0053.794 (0) Table wp_mailpoet_migrations: Rows added in this batch (next record: 36): 36 (uncompressed bytes in this segment=4160) in 0.09 seconds
+0053.836 (0) Table wp_mailpoet_migrations: finishing file(s) (2, 1 KB)
+0053.904 (0) Table wp_mailpoet_newsletter_links: Total expected rows (via COUNT): 0
+0053.942 (0) Table wp_mailpoet_newsletter_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=930) in 0.07 seconds
+0053.979 (0) Table wp_mailpoet_newsletter_links: finishing file(s) (2, 0.4 KB)
+0054.067 (0) Table wp_mailpoet_newsletter_option: Total expected rows (via COUNT): 0
+0054.089 (0) Table wp_mailpoet_newsletter_option: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=853) in 0.08 seconds
+0054.133 (0) Table wp_mailpoet_newsletter_option: finishing file(s) (2, 0.4 KB)
+0054.204 (0) Table wp_mailpoet_newsletter_option_fields: Total expected rows (via COUNT): 31
+0054.214 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0054.258 (0) Table wp_mailpoet_newsletter_option_fields: Rows added in this batch (next record: 31): 31 (uncompressed bytes in this segment=2938) in 0.09 seconds
+0054.301 (0) Table wp_mailpoet_newsletter_option_fields: finishing file(s) (2, 0.8 KB)
+0054.382 (0) Table wp_mailpoet_newsletter_posts: Total expected rows (via COUNT): 0
+0054.413 (0) Table wp_mailpoet_newsletter_posts: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=747) in 0.08 seconds
+0054.455 (0) Table wp_mailpoet_newsletter_posts: finishing file(s) (2, 0.4 KB)
+0054.532 (0) Table wp_mailpoet_newsletter_segment: Total expected rows (via COUNT): 0
+0054.554 (0) Table wp_mailpoet_newsletter_segment: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=787) in 0.06 seconds
+0054.595 (0) Table wp_mailpoet_newsletter_segment: finishing file(s) (2, 0.4 KB)
+0054.698 (0) Table wp_mailpoet_newsletter_templates: Total expected rows (via COUNT): 76
+0054.709 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0055.201 (0) Table wp_mailpoet_newsletter_templates: Rows added in this batch (next record: 76): 76 (uncompressed bytes in this segment=1111144) in 0.57 seconds
+0055.247 (0) Table wp_mailpoet_newsletter_templates: finishing file(s) (2, 65.9 KB)
+0055.337 (0) Table wp_mailpoet_newsletters: Total expected rows (via COUNT): 0
+0055.368 (0) Table wp_mailpoet_newsletters: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1815) in 0.09 seconds
+0055.421 (0) Table wp_mailpoet_newsletters: finishing file(s) (2, 0.6 KB)
+0055.485 (0) Table wp_mailpoet_scheduled_task_subscribers: Total expected rows (approximate): 0
+0055.509 (0) Table wp_mailpoet_scheduled_task_subscribers: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=900) in 0.05 seconds
+0055.549 (0) Table wp_mailpoet_scheduled_task_subscribers: finishing file(s) (2, 0.4 KB)
+0055.639 (0) Table wp_mailpoet_scheduled_tasks: Total expected rows (via COUNT): 14
+0055.650 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0055.696 (0) Table wp_mailpoet_scheduled_tasks: Rows added in this batch (next record: 14): 14 (uncompressed bytes in this segment=3553) in 0.11 seconds
+0055.747 (0) Table wp_mailpoet_scheduled_tasks: finishing file(s) (2, 0.9 KB)
+0055.815 (0) Table wp_mailpoet_segments: Total expected rows (via COUNT): 3
+0055.826 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0055.861 (0) Table wp_mailpoet_segments: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=1730) in 0.08 seconds
+0055.919 (0) Table wp_mailpoet_segments: finishing file(s) (2, 0.7 KB)
+0056.012 (0) Table wp_mailpoet_sending_queues: Total expected rows (via COUNT): 0
+0056.046 (0) Table wp_mailpoet_sending_queues: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1241) in 0.09 seconds
+0056.095 (0) Table wp_mailpoet_sending_queues: finishing file(s) (2, 0.5 KB)
+0056.188 (0) Table wp_mailpoet_settings: Total expected rows (via COUNT): 13
+0056.198 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0056.243 (0) Table wp_mailpoet_settings: Rows added in this batch (next record: 15): 13 (uncompressed bytes in this segment=3021) in 0.11 seconds
+0056.296 (0) Table wp_mailpoet_settings: finishing file(s) (2, 1.2 KB)
+0056.366 (0) Table wp_mailpoet_statistics_bounces: Total expected rows (via COUNT): 0
+0056.402 (0) Table wp_mailpoet_statistics_bounces: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=688) in 0.07 seconds
+0056.443 (0) Table wp_mailpoet_statistics_bounces: finishing file(s) (2, 0.4 KB)
+0056.519 (0) Table wp_mailpoet_statistics_clicks: Total expected rows (via COUNT): 0
+0056.543 (0) Table wp_mailpoet_statistics_clicks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1097) in 0.06 seconds
+0056.583 (0) Table wp_mailpoet_statistics_clicks: finishing file(s) (2, 0.5 KB)
+0056.653 (0) Table wp_mailpoet_statistics_forms: Total expected rows (via COUNT): 0
+0056.679 (0) Table wp_mailpoet_statistics_forms: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=694) in 0.06 seconds
+0056.720 (0) Table wp_mailpoet_statistics_forms: finishing file(s) (2, 0.4 KB)
+0056.794 (0) Table wp_mailpoet_statistics_newsletters: Total expected rows (via COUNT): 0
+0056.816 (0) Table wp_mailpoet_statistics_newsletters: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=791) in 0.06 seconds
+0056.854 (0) Table wp_mailpoet_statistics_newsletters: finishing file(s) (2, 0.4 KB)
+0056.929 (0) Table wp_mailpoet_statistics_opens: Total expected rows (via COUNT): 0
+0056.951 (0) Table wp_mailpoet_statistics_opens: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1051) in 0.06 seconds
+0056.987 (0) Table wp_mailpoet_statistics_opens: finishing file(s) (2, 0.5 KB)
+0057.056 (0) Table wp_mailpoet_statistics_unsubscribes: Total expected rows (via COUNT): 0
+0057.081 (0) Table wp_mailpoet_statistics_unsubscribes: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1092) in 0.06 seconds
+0057.119 (0) Table wp_mailpoet_statistics_unsubscribes: finishing file(s) (2, 0.5 KB)
+0057.196 (0) Table wp_mailpoet_statistics_woocommerce_purchases: Total expected rows (via COUNT): 0
+0057.219 (0) Table wp_mailpoet_statistics_woocommerce_purchases: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1361) in 0.06 seconds
+0057.257 (0) Table wp_mailpoet_statistics_woocommerce_purchases: finishing file(s) (2, 0.6 KB)
+0057.329 (0) Table wp_mailpoet_stats_notifications: Total expected rows (via COUNT): 0
+0057.351 (0) Table wp_mailpoet_stats_notifications: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=819) in 0.06 seconds
+0057.391 (0) Table wp_mailpoet_stats_notifications: finishing file(s) (2, 0.4 KB)
+0057.465 (0) Table wp_mailpoet_subscriber_custom_field: Total expected rows (via COUNT): 0
+0057.487 (0) Table wp_mailpoet_subscriber_custom_field: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=894) in 0.06 seconds
+0057.524 (0) Table wp_mailpoet_subscriber_custom_field: finishing file(s) (2, 0.4 KB)
+0057.583 (0) Table wp_mailpoet_subscriber_ips: Total expected rows (approximate): 0
+0057.606 (0) Table wp_mailpoet_subscriber_ips: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=593) in 0.05 seconds
+0057.638 (0) Table wp_mailpoet_subscriber_ips: finishing file(s) (2, 0.4 KB)
+0057.715 (0) Table wp_mailpoet_subscriber_segment: Total expected rows (via COUNT): 1
+0057.726 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0057.770 (0) Table wp_mailpoet_subscriber_segment: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1048) in 0.09 seconds
+0057.817 (0) Table wp_mailpoet_subscriber_segment: finishing file(s) (2, 0.5 KB)
+0057.886 (0) Table wp_mailpoet_subscriber_tag: Total expected rows (via COUNT): 0
+0057.923 (0) Table wp_mailpoet_subscriber_tag: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=778) in 0.07 seconds
+0057.966 (0) Table wp_mailpoet_subscriber_tag: finishing file(s) (2, 0.4 KB)
+0058.079 (0) Table wp_mailpoet_subscribers: Total expected rows (via COUNT): 1
+0058.091 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0058.137 (0) Table wp_mailpoet_subscribers: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=3236) in 0.12 seconds
+0058.187 (0) Table wp_mailpoet_subscribers: finishing file(s) (2, 0.9 KB)
+0058.263 (0) Table wp_mailpoet_tags: Total expected rows (via COUNT): 0
+0058.296 (0) Table wp_mailpoet_tags: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=713) in 0.07 seconds
+0058.339 (0) Table wp_mailpoet_tags: finishing file(s) (2, 0.4 KB)
+0058.407 (0) Table wp_mailpoet_user_agents: Total expected rows (via COUNT): 0
+0058.431 (0) Table wp_mailpoet_user_agents: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=753) in 0.06 seconds
+0058.472 (0) Table wp_mailpoet_user_agents: finishing file(s) (2, 0.4 KB)
+0058.540 (0) Table wp_mailpoet_user_flags: Total expected rows (via COUNT): 0
+0058.564 (0) Table wp_mailpoet_user_flags: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=801) in 0.06 seconds
+0058.601 (0) Table wp_mailpoet_user_flags: finishing file(s) (2, 0.4 KB)
+0058.688 (0) Table wp_rank_math_internal_links: Total expected rows (via COUNT): 0
+0058.716 (0) Table wp_rank_math_internal_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=786) in 0.07 seconds
+0058.758 (0) Table wp_rank_math_internal_links: finishing file(s) (2, 0.4 KB)
+0058.845 (0) Table wp_rank_math_internal_meta: Total expected rows (via COUNT): 20
+0058.857 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0058.901 (0) Table wp_rank_math_internal_meta: Rows added in this batch (next record: 206): 20 (uncompressed bytes in this segment=1023) in 0.09 seconds
+0058.939 (0) Table wp_rank_math_internal_meta: finishing file(s) (2, 0.4 KB)
+0059.037 (0) Table wp_wc_admin_note_actions: Total expected rows (via COUNT): 80
+0059.049 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0059.104 (0) Table wp_wc_admin_note_actions: Rows added in this batch (next record: 861): 80 (uncompressed bytes in this segment=15223) in 0.13 seconds
+0059.154 (0) Table wp_wc_admin_note_actions: finishing file(s) (2, 2.8 KB)
+0059.256 (0) Table wp_wc_admin_notes: Total expected rows (via COUNT): 56
+0059.267 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0059.302 (0) Table wp_wc_admin_notes: Rows added in this batch (next record: 57): 56 (uncompressed bytes in this segment=28501) in 0.11 seconds
+0059.353 (0) Table wp_wc_admin_notes: finishing file(s) (2, 6.3 KB)
+0059.413 (0) Table wp_wc_category_lookup: Total expected rows (approximate): 0
+0059.458 (0) Table wp_wc_category_lookup: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=581) in 0.07 seconds
+0059.495 (0) Table wp_wc_category_lookup: finishing file(s) (2, 0.3 KB)
+0059.564 (0) Table wp_wc_customer_lookup: Total expected rows (via COUNT): 0
+0059.587 (0) Table wp_wc_customer_lookup: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1258) in 0.06 seconds
+0059.628 (0) Table wp_wc_customer_lookup: finishing file(s) (2, 0.5 KB)
+0059.697 (0) Table wp_wc_download_log: Total expected rows (via COUNT): 0
+0059.722 (0) Table wp_wc_download_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=735) in 0.06 seconds
+0059.762 (0) Table wp_wc_download_log: finishing file(s) (2, 0.4 KB)
+0059.831 (0) Table wp_wc_order_addresses: Total expected rows (via COUNT): 0
+0059.852 (0) Table wp_wc_order_addresses: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1305) in 0.06 seconds
+0059.892 (0) Table wp_wc_order_addresses: finishing file(s) (2, 0.5 KB)
+0059.949 (0) Table wp_wc_order_coupon_lookup: Total expected rows (approximate): 0
+0059.972 (0) Table wp_wc_order_coupon_lookup: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=709) in 0.05 seconds
+0060.009 (0) Table wp_wc_order_coupon_lookup: finishing file(s) (2, 0.4 KB)
+0060.082 (0) Table wp_wc_order_operational_data: Total expected rows (via COUNT): 0
+0060.106 (0) Table wp_wc_order_operational_data: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1515) in 0.06 seconds
+0060.142 (0) Table wp_wc_order_operational_data: finishing file(s) (2, 0.6 KB)
+0060.214 (0) Table wp_wc_order_product_lookup: Total expected rows (via COUNT): 0
+0060.237 (0) Table wp_wc_order_product_lookup: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1274) in 0.06 seconds
+0060.277 (0) Table wp_wc_order_product_lookup: finishing file(s) (2, 0.5 KB)
+0060.346 (0) Table wp_wc_order_stats: Total expected rows (via COUNT): 0
+0060.370 (0) Table wp_wc_order_stats: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1219) in 0.06 seconds
+0060.408 (0) Table wp_wc_order_stats: finishing file(s) (2, 0.5 KB)
+0060.478 (0) Table wp_wc_order_tax_lookup: Total expected rows (approximate): 0
+0060.503 (0) Table wp_wc_order_tax_lookup: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=791) in 0.05 seconds
+0060.544 (0) Table wp_wc_order_tax_lookup: finishing file(s) (2, 0.4 KB)
+0060.616 (0) Table wp_wc_orders: Total expected rows (via COUNT): 0
+0060.639 (0) Table wp_wc_orders: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1676) in 0.06 seconds
+0060.677 (0) Table wp_wc_orders: finishing file(s) (2, 0.6 KB)
+0060.741 (0) Table wp_wc_orders_meta: Total expected rows (via COUNT): 0
+0060.774 (0) Table wp_wc_orders_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=743) in 0.07 seconds
+0060.823 (0) Table wp_wc_orders_meta: finishing file(s) (2, 0.4 KB)
+0060.887 (0) Table wp_wc_product_attributes_lookup: Total expected rows (approximate): 0
+0060.936 (0) Table wp_wc_product_attributes_lookup: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=850) in 0.08 seconds
+0060.987 (0) Table wp_wc_product_attributes_lookup: finishing file(s) (2, 0.4 KB)
+0061.074 (0) Table wp_wc_product_download_directories: Total expected rows (via COUNT): 2
+0061.087 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0061.136 (0) Table wp_wc_product_download_directories: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=956) in 0.11 seconds
+0061.177 (0) Table wp_wc_product_download_directories: finishing file(s) (2, 0.5 KB)
+0061.263 (0) Table wp_wc_product_meta_lookup: Total expected rows (via COUNT): 0
+0061.298 (0) Table wp_wc_product_meta_lookup: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1451) in 0.09 seconds
+0061.338 (0) Table wp_wc_product_meta_lookup: finishing file(s) (2, 0.5 KB)
+0061.410 (0) Table wp_wc_rate_limits: Total expected rows (via COUNT): 0
+0061.435 (0) Table wp_wc_rate_limits: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=688) in 0.06 seconds
+0061.476 (0) Table wp_wc_rate_limits: finishing file(s) (2, 0.4 KB)
+0061.536 (0) Table wp_wc_reserved_stock: Total expected rows (approximate): 0
+0061.560 (0) Table wp_wc_reserved_stock: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=657) in 0.05 seconds
+0061.599 (0) Table wp_wc_reserved_stock: finishing file(s) (2, 0.4 KB)
+0061.674 (0) Table wp_wc_tax_rate_classes: Total expected rows (via COUNT): 2
+0061.685 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0061.727 (0) Table wp_wc_tax_rate_classes: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=808) in 0.09 seconds
+0061.769 (0) Table wp_wc_tax_rate_classes: finishing file(s) (2, 0.4 KB)
+0061.843 (0) Table wp_wc_webhooks: Total expected rows (via COUNT): 0
+0061.880 (0) Table wp_wc_webhooks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1215) in 0.07 seconds
+0061.916 (0) Table wp_wc_webhooks: finishing file(s) (2, 0.5 KB)
+0062.014 (0) Table wp_woocommerce_api_keys: Total expected rows (via COUNT): 0
+0062.036 (0) Table wp_woocommerce_api_keys: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1038) in 0.08 seconds
+0062.087 (0) Table wp_woocommerce_api_keys: finishing file(s) (2, 0.5 KB)
+0062.166 (0) Table wp_woocommerce_attribute_taxonomies: Total expected rows (via COUNT): 0
+0062.191 (0) Table wp_woocommerce_attribute_taxonomies: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=954) in 0.06 seconds
+0062.230 (0) Table wp_woocommerce_attribute_taxonomies: finishing file(s) (2, 0.4 KB)
+0062.301 (0) Table wp_woocommerce_downloadable_product_permissions: Total expected rows (via COUNT): 0
+0062.325 (0) Table wp_woocommerce_downloadable_product_permissions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1518) in 0.06 seconds
+0062.365 (0) Table wp_woocommerce_downloadable_product_permissions: finishing file(s) (2, 0.5 KB)
+0062.509 (0) Table wp_woocommerce_log: Total expected rows (via COUNT): 0
+0062.540 (0) Table wp_woocommerce_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=715) in 0.12 seconds
+0062.600 (0) Table wp_woocommerce_log: finishing file(s) (2, 0.4 KB)
+0062.698 (0) Table wp_woocommerce_order_itemmeta: Total expected rows (via COUNT): 0
+0062.732 (0) Table wp_woocommerce_order_itemmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=763) in 0.10 seconds
+0062.785 (0) Table wp_woocommerce_order_itemmeta: finishing file(s) (2, 0.4 KB)
+0062.863 (0) Table wp_woocommerce_order_items: Total expected rows (via COUNT): 0
+0062.900 (0) Table wp_woocommerce_order_items: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=731) in 0.08 seconds
+0062.941 (0) Table wp_woocommerce_order_items: finishing file(s) (2, 0.4 KB)
+0063.037 (0) Table wp_woocommerce_payment_tokenmeta: Total expected rows (via COUNT): 0
+0063.076 (0) Table wp_woocommerce_payment_tokenmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=790) in 0.10 seconds
+0063.130 (0) Table wp_woocommerce_payment_tokenmeta: finishing file(s) (2, 0.4 KB)
+0063.204 (0) Table wp_woocommerce_payment_tokens: Total expected rows (via COUNT): 0
+0063.240 (0) Table wp_woocommerce_payment_tokens: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=833) in 0.07 seconds
+0063.279 (0) Table wp_woocommerce_payment_tokens: finishing file(s) (2, 0.4 KB)
+0063.384 (0) Table wp_woocommerce_sessions: Total expected rows (via COUNT): 1
+0063.397 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0063.445 (0) Table wp_woocommerce_sessions: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1612) in 0.12 seconds
+0063.497 (0) Table wp_woocommerce_sessions: finishing file(s) (2, 0.7 KB)
+0063.567 (0) Table wp_woocommerce_shipping_zone_locations: Total expected rows (via COUNT): 1
+0063.577 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0063.611 (0) Table wp_woocommerce_shipping_zone_locations: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=961) in 0.08 seconds
+0063.650 (0) Table wp_woocommerce_shipping_zone_locations: finishing file(s) (2, 0.4 KB)
+0063.718 (0) Table wp_woocommerce_shipping_zone_methods: Total expected rows (via COUNT): 1
+0063.730 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0063.763 (0) Table wp_woocommerce_shipping_zone_methods: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=870) in 0.08 seconds
+0063.804 (0) Table wp_woocommerce_shipping_zone_methods: finishing file(s) (2, 0.4 KB)
+0063.880 (0) Table wp_woocommerce_shipping_zones: Total expected rows (via COUNT): 1
+0063.890 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0063.933 (0) Table wp_woocommerce_shipping_zones: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=713) in 0.09 seconds
+0063.971 (0) Table wp_woocommerce_shipping_zones: finishing file(s) (2, 0.4 KB)
+0064.045 (0) Table wp_woocommerce_tax_rate_locations: Total expected rows (via COUNT): 0
+0064.079 (0) Table wp_woocommerce_tax_rate_locations: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=840) in 0.07 seconds
+0064.120 (0) Table wp_woocommerce_tax_rate_locations: finishing file(s) (2, 0.4 KB)
+0064.194 (0) Table wp_woocommerce_tax_rates: Total expected rows (via COUNT): 0
+0064.226 (0) Table wp_woocommerce_tax_rates: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1283) in 0.07 seconds
+0064.285 (0) Table wp_woocommerce_tax_rates: finishing file(s) (2, 0.4 KB)
+0064.299 (0) PHP event: code E_WARNING: filemtime(): stat failed for /Users/cliftonbenjamin/Local Sites/3rdsemesterproject/app/public/wp-content/updraft/backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz (line 1923, wp-content/plugins/updraftplus/backup.php)
+0064.335 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_options.table.tmpr2759.gz (1/99/fopen): adding to final database dump
+0064.355 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_options.table.gz (2/99/fopen): adding to final database dump
+0064.367 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_users.table.tmpr2.gz (3/99/fopen): adding to final database dump
+0064.381 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_users.table.gz (4/99/fopen): adding to final database dump
+0064.397 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_usermeta.table.tmpr48.gz (5/99/fopen): adding to final database dump
+0064.409 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_usermeta.table.gz (6/99/fopen): adding to final database dump
+0064.420 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_actions.table.tmpr324.gz (7/99/fopen): adding to final database dump
+0064.433 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_actions.table.gz (8/99/fopen): adding to final database dump
+0064.569 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_claims.table.tmpr0.gz (9/99/fopen): adding to final database dump
+0064.580 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_claims.table.gz (10/99/fopen): adding to final database dump
+0064.591 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_groups.table.tmpr9.gz (11/99/fopen): adding to final database dump
+0064.602 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_groups.table.gz (12/99/fopen): adding to final database dump
+0064.612 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_logs.table.tmpr887.gz (13/99/fopen): adding to final database dump
+0064.628 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_actionscheduler_logs.table.gz (14/99/fopen): adding to final database dump
+0064.639 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_commentmeta.table.tmpr0.gz (15/99/fopen): adding to final database dump
+0064.650 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_commentmeta.table.gz (16/99/fopen): adding to final database dump
+0064.659 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_comments.table.tmpr2.gz (17/99/fopen): adding to final database dump
+0064.672 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_comments.table.gz (18/99/fopen): adding to final database dump
+0064.684 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_links.table.tmpr0.gz (19/99/fopen): adding to final database dump
+0064.695 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_links.table.gz (20/99/fopen): adding to final database dump
+0064.707 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_postmeta.table.tmpr707.gz (21/99/fopen): adding to final database dump
+0064.719 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_postmeta.table.gz (22/99/fopen): adding to final database dump
+0064.730 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_posts.table.tmpr228.gz (23/99/fopen): adding to final database dump
+0064.744 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_posts.table.gz (24/99/fopen): adding to final database dump
+0064.756 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_term_relationships.table.tmpr100001.gz (25/99/fopen): adding to final database dump
+0064.769 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_term_relationships.table.gz (26/99/fopen): adding to final database dump
+0064.900 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_term_taxonomy.table.tmpr86.gz (27/99/fopen): adding to final database dump
+0064.912 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_term_taxonomy.table.gz (28/99/fopen): adding to final database dump
+0064.925 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_termmeta.table.tmpr0.gz (29/99/fopen): adding to final database dump
+0064.938 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_termmeta.table.gz (30/99/fopen): adding to final database dump
+0064.950 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_terms.table.tmpr86.gz (31/99/fopen): adding to final database dump
+0064.961 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_terms.table.gz (32/99/fopen): adding to final database dump
+0064.972 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_ads_recommendations.table.tmpr0.gz (33/99/fopen): adding to final database dump
+0064.984 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_ads_recommendations.table.gz (34/99/fopen): adding to final database dump
+0064.994 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_attribute_mapping_rules.table.tmpr0.gz (35/99/fopen): adding to final database dump
+0065.008 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_attribute_mapping_rules.table.gz (36/99/fopen): adding to final database dump
+0065.019 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_budget_recommendations.table.tmpr4231.gz (37/99/fopen): adding to final database dump
+0065.034 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_budget_recommendations.table.gz (38/99/fopen): adding to final database dump
+0065.048 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_merchant_issues.table.tmpr0.gz (39/99/fopen): adding to final database dump
+0065.061 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_merchant_issues.table.gz (40/99/fopen): adding to final database dump
+0065.071 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_merchant_price_benchmarks.table.tmpr0.gz (41/99/fopen): adding to final database dump
+0065.084 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_merchant_price_benchmarks.table.gz (42/99/fopen): adding to final database dump
+0065.095 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_shipping_rates.table.tmpr0.gz (43/99/fopen): adding to final database dump
+0065.109 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_shipping_rates.table.gz (44/99/fopen): adding to final database dump
+0065.120 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_shipping_times.table.tmpr0.gz (45/99/fopen): adding to final database dump
+0065.131 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_gla_shipping_times.table.gz (46/99/fopen): adding to final database dump
+0065.142 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_run_logs.table.tmpr0.gz (47/99/fopen): adding to final database dump
+0065.152 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_run_logs.table.gz (48/99/fopen): adding to final database dump
+0065.164 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_run_subjects.table.tmpr0.gz (49/99/fopen): adding to final database dump
+0065.177 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_run_subjects.table.gz (50/99/fopen): adding to final database dump
+0065.188 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_runs.table.tmpr0.gz (51/99/fopen): adding to final database dump
+0065.201 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_runs.table.gz (52/99/fopen): adding to final database dump
+0065.210 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_triggers.table.tmpr1.gz (53/99/fopen): adding to final database dump
+0065.220 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_triggers.table.gz (54/99/fopen): adding to final database dump
+0065.232 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_versions.table.tmpr0.gz (55/99/fopen): adding to final database dump
+0065.245 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automation_versions.table.gz (56/99/fopen): adding to final database dump
+0065.255 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automations.table.tmpr0.gz (57/99/fopen): adding to final database dump
+0065.268 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_automations.table.gz (58/99/fopen): adding to final database dump
+0065.279 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_custom_fields.table.tmpr0.gz (59/99/fopen): adding to final database dump
+0065.292 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_custom_fields.table.gz (60/99/fopen): adding to final database dump
+0065.302 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_dynamic_segment_filters.table.tmpr0.gz (61/99/fopen): adding to final database dump
+0065.314 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_dynamic_segment_filters.table.gz (62/99/fopen): adding to final database dump
+0065.326 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_feature_flags.table.tmpr0.gz (63/99/fopen): adding to final database dump
+0065.339 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_feature_flags.table.gz (64/99/fopen): adding to final database dump
+0065.350 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_forms.table.tmpr0.gz (65/99/fopen): adding to final database dump
+0065.361 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_forms.table.gz (66/99/fopen): adding to final database dump
+0065.372 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_log.table.tmpr0.gz (67/99/fopen): adding to final database dump
+0065.385 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_log.table.gz (68/99/fopen): adding to final database dump
+0065.396 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_migrations.table.tmpr37.gz (69/99/fopen): adding to final database dump
+0065.407 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_migrations.table.gz (70/99/fopen): adding to final database dump
+0065.420 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_links.table.tmpr0.gz (71/99/fopen): adding to final database dump
+0065.431 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_links.table.gz (72/99/fopen): adding to final database dump
+0065.443 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_option.table.tmpr0.gz (73/99/fopen): adding to final database dump
+0065.455 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_option.table.gz (74/99/fopen): adding to final database dump
+0065.468 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_option_fields.table.tmpr32.gz (75/99/fopen): adding to final database dump
+0065.478 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_option_fields.table.gz (76/99/fopen): adding to final database dump
+0065.489 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_posts.table.tmpr0.gz (77/99/fopen): adding to final database dump
+0065.500 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_posts.table.gz (78/99/fopen): adding to final database dump
+0065.510 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_segment.table.tmpr0.gz (79/99/fopen): adding to final database dump
+0065.523 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_segment.table.gz (80/99/fopen): adding to final database dump
+0065.532 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_templates.table.tmpr77.gz (81/99/fopen): adding to final database dump
+0065.544 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletter_templates.table.gz (82/99/fopen): adding to final database dump
+0065.556 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletters.table.tmpr0.gz (83/99/fopen): adding to final database dump
+0065.567 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_newsletters.table.gz (84/99/fopen): adding to final database dump
+0065.578 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_scheduled_task_subscribers.table.tmpr1.gz (85/99/fopen): adding to final database dump
+0065.590 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_scheduled_task_subscribers.table.gz (86/99/fopen): adding to final database dump
+0065.601 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_scheduled_tasks.table.tmpr15.gz (87/99/fopen): adding to final database dump
+0065.613 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_scheduled_tasks.table.gz (88/99/fopen): adding to final database dump
+0065.625 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_segments.table.tmpr4.gz (89/99/fopen): adding to final database dump
+0065.638 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_segments.table.gz (90/99/fopen): adding to final database dump
+0065.650 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_sending_queues.table.tmpr0.gz (91/99/fopen): adding to final database dump
+0065.662 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_sending_queues.table.gz (92/99/fopen): adding to final database dump
+0065.674 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_settings.table.tmpr16.gz (93/99/fopen): adding to final database dump
+0065.688 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_settings.table.gz (94/99/fopen): adding to final database dump
+0065.700 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_bounces.table.tmpr0.gz (95/99/fopen): adding to final database dump
+0065.727 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_bounces.table.gz (96/99/fopen): adding to final database dump
+0065.763 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_clicks.table.tmpr0.gz (97/99/fopen): adding to final database dump
+0065.775 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_clicks.table.gz (98/99/fopen): adding to final database dump
+0065.788 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_forms.table.tmpr0.gz (99/99/fopen): adding to final database dump
+0065.812 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_forms.table.gz (100/99/fopen): adding to final database dump
+0065.821 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_newsletters.table.tmpr0.gz (101/99/fopen): adding to final database dump
+0065.834 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_newsletters.table.gz (102/99/fopen): adding to final database dump
+0065.845 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_opens.table.tmpr0.gz (103/99/fopen): adding to final database dump
+0065.858 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_opens.table.gz (104/99/fopen): adding to final database dump
+0065.869 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_unsubscribes.table.tmpr0.gz (105/99/fopen): adding to final database dump
+0065.879 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_unsubscribes.table.gz (106/99/fopen): adding to final database dump
+0065.890 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_woocommerce_purchases.table.tmpr0.gz (107/99/fopen): adding to final database dump
+0065.900 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_statistics_woocommerce_purchases.table.gz (108/99/fopen): adding to final database dump
+0065.912 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_stats_notifications.table.tmpr0.gz (109/99/fopen): adding to final database dump
+0065.924 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_stats_notifications.table.gz (110/99/fopen): adding to final database dump
+0065.935 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_custom_field.table.tmpr0.gz (111/99/fopen): adding to final database dump
+0065.947 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_custom_field.table.gz (112/99/fopen): adding to final database dump
+0065.958 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_ips.table.tmpr1.gz (113/99/fopen): adding to final database dump
+0065.969 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_ips.table.gz (114/99/fopen): adding to final database dump
+0065.980 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_segment.table.tmpr2.gz (115/99/fopen): adding to final database dump
+0065.992 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_segment.table.gz (116/99/fopen): adding to final database dump
+0066.004 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_tag.table.tmpr0.gz (117/99/fopen): adding to final database dump
+0066.015 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscriber_tag.table.gz (118/99/fopen): adding to final database dump
+0066.027 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscribers.table.tmpr2.gz (119/99/fopen): adding to final database dump
+0066.039 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_subscribers.table.gz (120/99/fopen): adding to final database dump
+0066.049 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_tags.table.tmpr0.gz (121/99/fopen): adding to final database dump
+0066.060 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_tags.table.gz (122/99/fopen): adding to final database dump
+0066.071 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_user_agents.table.tmpr0.gz (123/99/fopen): adding to final database dump
+0066.086 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_user_agents.table.gz (124/99/fopen): adding to final database dump
+0066.101 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_user_flags.table.tmpr0.gz (125/99/fopen): adding to final database dump
+0066.114 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_mailpoet_user_flags.table.gz (126/99/fopen): adding to final database dump
+0066.125 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_rank_math_internal_links.table.tmpr0.gz (127/99/fopen): adding to final database dump
+0066.138 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_rank_math_internal_links.table.gz (128/99/fopen): adding to final database dump
+0066.150 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_rank_math_internal_meta.table.tmpr207.gz (129/99/fopen): adding to final database dump
+0066.162 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_rank_math_internal_meta.table.gz (130/99/fopen): adding to final database dump
+0066.174 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_admin_note_actions.table.tmpr862.gz (131/99/fopen): adding to final database dump
+0066.185 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_admin_note_actions.table.gz (132/99/fopen): adding to final database dump
+0066.198 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_admin_notes.table.tmpr58.gz (133/99/fopen): adding to final database dump
+0066.210 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_admin_notes.table.gz (134/99/fopen): adding to final database dump
+0066.223 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_category_lookup.table.tmpr1001.gz (135/99/fopen): adding to final database dump
+0066.234 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_category_lookup.table.gz (136/99/fopen): adding to final database dump
+0066.248 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_customer_lookup.table.tmpr0.gz (137/99/fopen): adding to final database dump
+0066.273 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_customer_lookup.table.gz (138/99/fopen): adding to final database dump
+0066.283 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_download_log.table.tmpr0.gz (139/99/fopen): adding to final database dump
+0066.295 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_download_log.table.gz (140/99/fopen): adding to final database dump
+0066.306 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_addresses.table.tmpr0.gz (141/99/fopen): adding to final database dump
+0066.322 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_addresses.table.gz (142/99/fopen): adding to final database dump
+0066.333 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_coupon_lookup.table.tmpr1.gz (143/99/fopen): adding to final database dump
+0066.346 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_coupon_lookup.table.gz (144/99/fopen): adding to final database dump
+0066.359 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_operational_data.table.tmpr0.gz (145/99/fopen): adding to final database dump
+0066.377 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_operational_data.table.gz (146/99/fopen): adding to final database dump
+0066.388 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_product_lookup.table.tmpr0.gz (147/99/fopen): adding to final database dump
+0066.398 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_product_lookup.table.gz (148/99/fopen): adding to final database dump
+0066.411 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_stats.table.tmpr0.gz (149/99/fopen): adding to final database dump
+0066.422 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_stats.table.gz (150/99/fopen): adding to final database dump
+0066.434 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_tax_lookup.table.tmpr1.gz (151/99/fopen): adding to final database dump
+0066.445 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_order_tax_lookup.table.gz (152/99/fopen): adding to final database dump
+0066.456 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_orders.table.tmpr0.gz (153/99/fopen): adding to final database dump
+0066.467 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_orders.table.gz (154/99/fopen): adding to final database dump
+0066.478 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_orders_meta.table.tmpr0.gz (155/99/fopen): adding to final database dump
+0066.490 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_orders_meta.table.gz (156/99/fopen): adding to final database dump
+0066.501 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_product_attributes_lookup.table.tmpr1.gz (157/99/fopen): adding to final database dump
+0066.512 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_product_attributes_lookup.table.gz (158/99/fopen): adding to final database dump
+0066.524 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_product_download_directories.table.tmpr3.gz (159/99/fopen): adding to final database dump
+0066.535 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_product_download_directories.table.gz (160/99/fopen): adding to final database dump
+0066.547 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_product_meta_lookup.table.tmpr0.gz (161/99/fopen): adding to final database dump
+0066.558 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_product_meta_lookup.table.gz (162/99/fopen): adding to final database dump
+0066.568 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_rate_limits.table.tmpr0.gz (163/99/fopen): adding to final database dump
+0066.581 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_rate_limits.table.gz (164/99/fopen): adding to final database dump
+0066.592 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_reserved_stock.table.tmpr1.gz (165/99/fopen): adding to final database dump
+0066.603 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_reserved_stock.table.gz (166/99/fopen): adding to final database dump
+0066.615 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_tax_rate_classes.table.tmpr3.gz (167/99/fopen): adding to final database dump
+0066.627 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_tax_rate_classes.table.gz (168/99/fopen): adding to final database dump
+0066.641 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_webhooks.table.tmpr0.gz (169/99/fopen): adding to final database dump
+0066.652 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_wc_webhooks.table.gz (170/99/fopen): adding to final database dump
+0066.664 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_api_keys.table.tmpr0.gz (171/99/fopen): adding to final database dump
+0066.676 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_api_keys.table.gz (172/99/fopen): adding to final database dump
+0066.687 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_attribute_taxonomies.table.tmpr0.gz (173/99/fopen): adding to final database dump
+0066.699 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_attribute_taxonomies.table.gz (174/99/fopen): adding to final database dump
+0066.708 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_downloadable_product_permissions.table.tmpr0.gz (175/99/fopen): adding to final database dump
+0066.718 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_downloadable_product_permissions.table.gz (176/99/fopen): adding to final database dump
+0066.728 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_log.table.tmpr0.gz (177/99/fopen): adding to final database dump
+0066.740 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_log.table.gz (178/99/fopen): adding to final database dump
+0066.755 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_order_itemmeta.table.tmpr0.gz (179/99/fopen): adding to final database dump
+0066.767 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_order_itemmeta.table.gz (180/99/fopen): adding to final database dump
+0066.779 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_order_items.table.tmpr0.gz (181/99/fopen): adding to final database dump
+0066.789 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_order_items.table.gz (182/99/fopen): adding to final database dump
+0066.801 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_payment_tokenmeta.table.tmpr0.gz (183/99/fopen): adding to final database dump
+0066.812 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_payment_tokenmeta.table.gz (184/99/fopen): adding to final database dump
+0066.824 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_payment_tokens.table.tmpr0.gz (185/99/fopen): adding to final database dump
+0066.836 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_payment_tokens.table.gz (186/99/fopen): adding to final database dump
+0066.847 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_sessions.table.tmpr2.gz (187/99/fopen): adding to final database dump
+0066.859 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_sessions.table.gz (188/99/fopen): adding to final database dump
+0066.871 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_shipping_zone_locations.table.tmpr2.gz (189/99/fopen): adding to final database dump
+0066.882 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_shipping_zone_locations.table.gz (190/99/fopen): adding to final database dump
+0066.892 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_shipping_zone_methods.table.tmpr2.gz (191/99/fopen): adding to final database dump
+0066.905 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_shipping_zone_methods.table.gz (192/99/fopen): adding to final database dump
+0066.915 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_shipping_zones.table.tmpr2.gz (193/99/fopen): adding to final database dump
+0066.927 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_shipping_zones.table.gz (194/99/fopen): adding to final database dump
+0066.938 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_tax_rate_locations.table.tmpr0.gz (195/99/fopen): adding to final database dump
+0066.948 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_tax_rate_locations.table.gz (196/99/fopen): adding to final database dump
+0066.961 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_tax_rates.table.tmpr0.gz (197/99/fopen): adding to final database dump
+0066.974 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db-table-wp_woocommerce_tax_rates.table.gz (198/99/fopen): adding to final database dump
+0067.028 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz: finished writing out complete database file (458.9 KB)
+0067.114 (0) Total database tables backed up: 99 (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz, size: 470056, sha1: 0b45d9c52b7a08a753a647bf4780c73f7c8f477a, sha256: e1eba5f4e4324b95e0961662ed41095cdabca948d0f8fcd585d61587b5b826ac)
+0067.218 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip: plugins: This file has already been successfully uploaded
+0067.230 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip: themes: This file has already been successfully uploaded
+0067.241 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip: uploads: This file has already been successfully uploaded
+0067.252 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip: others: This file has already been successfully uploaded
+0067.263 (0) backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz: db: This file has not yet been successfully uploaded: will queue
+0067.275 (0) Saving backup history. Total backup size: 95.2 MB
+0067.319 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0067.355 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0067.586 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-9e66e4a1fb500b895cdafd55a90ef0b9)
+0068.015 (0) Google Drive: quota usage: used=94.8 MB, total=15360 MB, available=15265.2 MB
+0068.027 (0) Google Drive: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz: Attempting to upload to Google Drive (into folder id: 1mFhwCpImmlQm4qSv18JcnkNF2wJULSr2)
+0070.197 (0) Googledrive chunked upload: 100 % uploaded
+0070.230 (0) Google Drive: OK: Archive backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz uploaded in 2.19 seconds
+0070.253 (0) Recording as successfully uploaded: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz
+0070.277 (0) Deleting local file: backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-db.gz: OK
+0070.308 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0070.329 (0) Number of backup sets in history: 1; groups (db): 1
+0070.339 (0) Examining (for databases) backup set with group_id=0, nonce=dac2264e37ef, datestamp=1759741055 (Oct 06 2025 08:57:35)
+0070.349 (0) This backup set is the backup set just made, so will not be deleted.
+0070.349 (0) Number of backup sets in history: 1; groups (files): 1
+0070.362 (0) Examining (for files) backup set with nonce=dac2264e37ef, datestamp=1759741055 (Oct 06 2025 08:57:35)
+0070.362 (0) This backup set is the backup set just made, so will not be deleted.
+0070.374 (0) This backup set is the backup set just made, so will not be deleted.
+0070.374 (0) This backup set is the backup set just made, so will not be deleted.
+0070.374 (0) This backup set is the backup set just made, so will not be deleted.
+0070.375 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0070.384 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0070.429 (0) Resume backup (dac2264e37ef, 0): finish run
+0070.469 (0) Decremented the semaphore (fd) by 1
+0070.491 (0) Semaphore (fd) unlocked
+0070.501 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0070.536 (0) Deleting zip manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-plugins.zip.list.tmp)
+0070.549 (0) Deleting zip manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-themes.zip.list.tmp)
+0070.561 (0) Deleting zip manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-uploads.zip.list.tmp)
+0070.573 (0) Deleting zip manifest (backup_2025-10-06-0857_3rd_Semester_Project_dac2264e37ef-others.zip.list.tmp)
+0070.584 (0) No email will/can be sent - the user has not configured an email address.
+0070.597 (0) The backup succeeded and is now complete

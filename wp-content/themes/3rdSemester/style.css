@@ -212,8 +212,10 @@ main { padding: 20px 16px; }
   color:#fff;
 }
 .btn--dark{
-  background:#111827;
+  background: #111827;
   color:#fff;
+  padding: 24px;
+  
 }
 
 /* Link pill (All Blogs) */

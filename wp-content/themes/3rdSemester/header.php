@@ -46,6 +46,9 @@
   <div class="search-panel">
     <div class="container"><?php get_search_form(); ?></div>
   </div>
+
+ 
+
 </header>
 
 <main class="container" id="content" role="main">
