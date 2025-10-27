@@ -338,3 +338,101 @@ add_action('acf/save_post', function($post_id){
 }, 20);
 
 
+/* ===== Week 41 — Path A (ACF front-end form) ===== */
+
+/* Ultimate Member (or core) login/register URLs for template buttons */
+if (!function_exists('omniora_um_core_url')) {
+  function omniora_um_core_url(string $type): string {
+    if (function_exists('um_get_core_page')) { $id = um_get_core_page($type); if ($id) return get_permalink($id); }
+    switch ($type) {
+      case 'login':    return wp_login_url();
+      case 'register': return function_exists('wp_registration_url') ? wp_registration_url() : wp_login_url();
+      case 'account':  return admin_url('profile.php');
+      case 'logout':   return wp_logout_url(home_url('/'));
+      default:         return home_url('/');
+    }
+  }
+}
+
+/* 1) HARD STOP: block guest submissions coming from any ACF front-end save */
+add_action('acf/save_post', function($post_id){
+  if (get_post_type($post_id) !== 'testimonial') return;
+  if (!is_user_logged_in()) {
+    wp_die(
+      esc_html__('You must be logged in to submit a testimonial.', 'omniora'),
+      esc_html__('Login required', 'omniora'),
+      ['response' => 403]
+    );
+  }
+}, 1);
+
+/* 2) POST-PROCESS: bind to product, set avatar as featured, set language */
+add_action('acf/save_post', function($post_id){
+  if (get_post_type($post_id) !== 'testimonial') return;
+
+  // Bind to product coming from acf_form(['hidden_fields' => ['current_product' => $shoe_id]])
+  if (!empty($_POST['current_product']) && is_numeric($_POST['current_product'])) {
+    $pid = (int) $_POST['current_product'];
+    if (function_exists('update_field')) update_field('related_product', $pid, $post_id);
+    else update_post_meta($post_id, 'related_product', $pid);
+  }
+
+  // Optional: use ACF "avatar" image field as featured image (rename if needed)
+  if (function_exists('get_field')) {
+    $img = get_field('avatar', $post_id); // your ACF image field handle
+    $att = is_array($img) ? ($img['ID'] ?? 0) : (is_numeric($img) ? (int)$img : 0);
+    if ($att) set_post_thumbnail($post_id, $att);
+  }
+
+  // Keep language consistent with current view
+  if (function_exists('pll_current_language') && function_exists('pll_set_post_language')) {
+    $lang = pll_current_language('slug');
+    if ($lang) pll_set_post_language($post_id, $lang);
+  }
+}, 20);
+
+/* 3) SURVEY handler (CSRF + honeypot + sanitization) — keep if you use survey */
+if (!function_exists('omniora_handle_survey_submission')) {
+  add_action('init', 'omniora_handle_survey_submission');
+  function omniora_handle_survey_submission() {
+    if (empty($_POST['omniora_survey_nonce'])) return;
+    if (!wp_verify_nonce($_POST['omniora_survey_nonce'], 'omniora_survey')) return;
+    if (!empty($_POST['website'])) return; // honeypot
+
+    $get = fn($k)=> isset($_POST[$k]) ? wp_unslash($_POST[$k]) : '';
+    $sport    = sanitize_text_field($get('sport'));
+    $level    = sanitize_text_field($get('level'));
+    $terrain  = is_array($_POST['terrain']??null)  ? array_map('sanitize_text_field', $_POST['terrain'])  : [];
+    $width    = sanitize_text_field($get('width'));
+    $budget   = sanitize_text_field($get('budget'));
+    $features = is_array($_POST['features']??null) ? array_map('sanitize_text_field', $_POST['features']) : [];
+    $email    = sanitize_email($get('email'));
+    $consent  = !empty($_POST['consent']) ? 1 : 0;
+
+    $post_id = wp_insert_post([
+      'post_type'   => 'survey_entry',
+      'post_title'  => sprintf('%s %s', __('Survey','omniora'), date_i18n('Y-m-d H:i')),
+      'post_status' => 'publish',
+    ]);
+
+    if ($post_id && !is_wp_error($post_id)) {
+      update_post_meta($post_id,'sport',$sport);
+      update_post_meta($post_id,'level',$level);
+      update_post_meta($post_id,'terrain',implode(', ',$terrain));
+      update_post_meta($post_id,'width',$width);
+      update_post_meta($post_id,'budget',$budget);
+      update_post_meta($post_id,'features',implode(', ',$features));
+      update_post_meta($post_id,'email',$consent ? $email : '');
+      update_post_meta($post_id,'consent',$consent);
+
+      if (function_exists('pll_current_language') && function_exists('pll_set_post_language')) {
+        $lang = pll_current_language('slug'); if ($lang) pll_set_post_language($post_id,$lang);
+      }
+    }
+
+    wp_safe_redirect(add_query_arg('survey','thanks', wp_get_referer() ?: home_url('/'))); exit;
+  }
+}
+
+
+
