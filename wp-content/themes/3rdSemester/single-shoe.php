@@ -91,7 +91,7 @@ get_header(); ?>
               $reg_url = add_query_arg(
                 'redirect_to',
                 rawurlencode($redirect_target),
-                home_url('/account/')
+                home_url('/register/')
               );
             ?>
             <div class="notice error">
