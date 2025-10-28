@@ -2,6 +2,14 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
   <div class="product-container">
+
+    <!-- Survey banner CTA -->
+    <p class="survey-banner" style="text-align:center; margin: 16px 0 24px;">
+      <a class="btn btn--dark" href="<?php echo esc_url( function_exists('omniora_get_survey_url') ? omniora_get_survey_url() : home_url('/survey/') ); ?>">
+        <?php echo function_exists('pll__') ? pll__('Help us tailor your gear') : __('Help us tailor your gear','omniora'); ?>
+      </a>
+    </p>
+
     <?php
       $loop = new WP_Query([
         'post_type'      => 'shoe',
@@ -50,7 +58,7 @@
 
           <?php if ($price): ?>
             <div class="price">
-              <span class="current"><?php echo esc_html( omniora_format_price($price) ); ?></span>
+              <span class="current"><?php echo esc_html( function_exists('omniora_format_price') ? omniora_format_price($price) : $price ); ?></span>
             </div>
           <?php endif; ?>
 
