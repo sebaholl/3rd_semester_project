@@ -664,3 +664,21 @@ body{
 /* Homepage testimonials tweaks */
 .section--testimonials .section-head { margin-bottom: 12px; }
 .section--testimonials .btn--dark { padding:10px 16px; border-radius:999px; }
+
+
+.promo-banner {
+  background:#da7727;
+  border-top:4px solid #ff6b6b;
+  padding:10px 0;
+}
+.promo-banner__text {
+  margin:0;
+  font-weight:600;
+  text-align:center;
+  align-items: center;
+}
+.promo-banner__link {
+  margin-left:8px;
+  color:#d6336c;
+  text-decoration:underline;
+}

@@ -4,7 +4,7 @@ Tags: online store, ecommerce, shop, shopping cart, sell online
 Requires at least: 6.7
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 10.1.1
+Stable tag: 10.3.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -170,12 +170,11 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 10.1.2 2025-08-27 =
+= 10.3.3 2025-10-24 =
 
 **WooCommerce**
 
-* Fix - Prevent woocommerce_cancel_unpaid_orders being queued as unique so it recurs after the stock hold limit [#60626](https://github.com/woocommerce/woocommerce/pull/60626)
-* Fix - Revert to using usermeta to store persistent carts [#60605](https://github.com/woocommerce/woocommerce/pull/60605)
+* Dev - Add in deprecated script warnings and backwards compatibility for 3PDs [#61599](https://github.com/woocommerce/woocommerce/pull/61599)
 
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).
