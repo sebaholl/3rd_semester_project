@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfd277e5a82374078694b99b0e6aef07c
+class ComposerStaticInitf1ad62ff0a56f3dbf9600eef6de90a8a
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -463,13 +463,16 @@ class ComposerStaticInitfd277e5a82374078694b99b0e6aef07c
         'WooCommerce\\PayPalCommerce\\Button\\Exception\\ValidationException' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Exception/ValidationException.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\CartProductsHelper' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/CartProductsHelper.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\CheckoutFormSaver' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/CheckoutFormSaver.php',
-        'WooCommerce\\PayPalCommerce\\Button\\Helper\\ContextTrait' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/ContextTrait.php',
+        'WooCommerce\\PayPalCommerce\\Button\\Helper\\Context' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/Context.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\DisabledFundingSources' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/DisabledFundingSources.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\EarlyOrderHandler' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/EarlyOrderHandler.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\MessagesApply' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/MessagesApply.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\MessagesDisclaimers' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/MessagesDisclaimers.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\ThreeDSecure' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/ThreeDSecure.php',
         'WooCommerce\\PayPalCommerce\\Button\\Helper\\WooCommerceOrderCreator' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Helper/WooCommerceOrderCreator.php',
+        'WooCommerce\\PayPalCommerce\\Button\\Session\\CartData' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Session/CartData.php',
+        'WooCommerce\\PayPalCommerce\\Button\\Session\\CartDataFactory' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Session/CartDataFactory.php',
+        'WooCommerce\\PayPalCommerce\\Button\\Session\\CartDataTransientStorage' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Session/CartDataTransientStorage.php',
         'WooCommerce\\PayPalCommerce\\Button\\Validation\\CheckoutFormValidator' => __DIR__ . '/../..' . '/modules/ppcp-button/src/Validation/CheckoutFormValidator.php',
         'WooCommerce\\PayPalCommerce\\CardFields\\CardFieldsModule' => __DIR__ . '/../..' . '/modules/ppcp-card-fields/src/CardFieldsModule.php',
         'WooCommerce\\PayPalCommerce\\CardFields\\Helper\\CardFieldsApplies' => __DIR__ . '/../..' . '/modules/ppcp-card-fields/src/Helper/CardFieldsApplies.php',
@@ -857,6 +860,7 @@ class ComposerStaticInitfd277e5a82374078694b99b0e6aef07c
         'WooCommerce\\PayPalCommerce\\Webhooks\\Status\\WebhookSimulation' => __DIR__ . '/../..' . '/modules/ppcp-webhooks/src/Status/WebhookSimulation.php',
         'WooCommerce\\PayPalCommerce\\Webhooks\\WebhookEventStorage' => __DIR__ . '/../..' . '/modules/ppcp-webhooks/src/WebhookEventStorage.php',
         'WooCommerce\\PayPalCommerce\\Webhooks\\WebhookModule' => __DIR__ . '/../..' . '/modules/ppcp-webhooks/src/WebhookModule.php',
+        'WooCommerce\\PayPalCommerce\\Webhooks\\WebhookOrchestrator' => __DIR__ . '/../..' . '/modules/ppcp-webhooks/src/WebhookOrchestrator.php',
         'WooCommerce\\PayPalCommerce\\Webhooks\\WebhookRegistrar' => __DIR__ . '/../..' . '/modules/ppcp-webhooks/src/WebhookRegistrar.php',
         'WooCommerce\\WooCommerce\\Logging\\Logger\\NullLogger' => __DIR__ . '/../..' . '/modules/woocommerce-logging/src/Logger/NullLogger.php',
         'WooCommerce\\WooCommerce\\Logging\\Logger\\WooCommerceLogger' => __DIR__ . '/../..' . '/modules/woocommerce-logging/src/Logger/WooCommerceLogger.php',
@@ -870,9 +874,9 @@ class ComposerStaticInitfd277e5a82374078694b99b0e6aef07c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfd277e5a82374078694b99b0e6aef07c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfd277e5a82374078694b99b0e6aef07c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitfd277e5a82374078694b99b0e6aef07c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf1ad62ff0a56f3dbf9600eef6de90a8a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf1ad62ff0a56f3dbf9600eef6de90a8a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf1ad62ff0a56f3dbf9600eef6de90a8a::$classMap;
 
         }, null, ClassLoader::class);
     }

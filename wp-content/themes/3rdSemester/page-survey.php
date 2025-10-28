@@ -4,6 +4,7 @@ get_header();
 
 $thanks = (isset($_GET['survey']) && $_GET['survey'] === 'thanks');
 $__ = function($s){ return function_exists('pll__') ? pll__($s) : __($s,'omniora'); };
+$current_url = get_permalink(); // always post back to this page
 ?>
 <section class="section">
   <div class="container survey-form">
@@ -14,7 +15,7 @@ $__ = function($s){ return function_exists('pll__') ? pll__($s) : __($s,'omniora
       <?php endif; ?>
     </header>
 
-    <form method="post" action="">
+    <form method="post" action="<?php echo esc_url( $current_url ); ?>">
       <?php wp_nonce_field('omniora_survey', 'omniora_survey_nonce'); ?>
       <!-- Honeypot -->
       <input type="text" name="website" value="" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -111,7 +112,7 @@ $__ = function($s){ return function_exists('pll__') ? pll__($s) : __($s,'omniora
   function toggle(){ if(row) row.style.display = c && c.checked ? 'block':'none'; }
   if(c){ c.addEventListener('change', toggle); toggle(); }
 
-  // Keep "at least one terrain" reliable in older browsers
+  // Require at least one "terrain" even on older browsers
   var terrains = document.querySelectorAll('input[name="terrain[]"]');
   if (terrains.length) {
     function validateGroup(){
@@ -126,3 +127,4 @@ $__ = function($s){ return function_exists('pll__') ? pll__($s) : __($s,'omniora
 </script>
 
 <?php get_footer();
+

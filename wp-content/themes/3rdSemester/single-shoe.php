@@ -30,17 +30,17 @@ get_header(); ?>
         <div class="product__grid">
           <div class="product__media">
             <?php
-            if (!empty($cover['url'])) {
+            if ( !empty($cover['url']) ) {
               echo '<img src="'.esc_url($cover['url']).'" alt="'.esc_attr($title).'">';
             } elseif ( has_post_thumbnail() ) {
-              the_post_thumbnail('large', ['alt'=>$title]);
+              the_post_thumbnail('large', ['alt' => $title]);
             } else {
               echo '<div class="img-placeholder">'.esc_html($lbl_noimg).'</div>';
             }
             ?>
           </div>
           <div class="product__body">
-            <?php if ($price): ?>
+            <?php if ( $price ): ?>
               <p class="product__price">
                 <?php echo esc_html( function_exists('omniora_format_price') ? omniora_format_price($price) : $price ); ?>
               </p>
@@ -60,39 +60,39 @@ get_header(); ?>
           <?php if ( is_user_logged_in() && function_exists('acf_form') ) : ?>
 
             <?php
-            // Render an ACF form that creates a new "testimonial" post (pending)
-            // and secretly binds it to THIS product via hidden field "current_product".
-            // We also inject a honeypot field ("website") before fields.
+            // ACF form: creates a new "testimonial" and binds to this product
             acf_form([
-              'post_id'          => 'new_post',
-              'new_post'         => [
+              'post_id'              => 'new_post',
+              'new_post'             => [
                 'post_type'   => 'testimonial',
-                'post_status' => 'pending', // keep moderation; change to 'publish' if desired
+                'post_status' => 'pending', // moderation on
               ],
-              'field_groups'     => [],     // leave empty to show fields by location (post type == testimonial)
-              'submit_value'     => $lbl_submit,
-              'uploader'         => 'wp',
-              'return'           => $thanks_url,
+              'field_groups'         => [], // show fields per location rules
+              'submit_value'         => $lbl_submit,
+              'uploader'             => 'wp',
+              'return'               => $thanks_url,
               'html_updated_message' => '',
-              'html_before_fields'=> '<input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">', // honeypot
-              'hidden_fields'    => [
-                'current_product' => (int) $shoe_id,
-              ],
-              // ACF auto-adds its own nonce for CSRF
+              // Spam honeypot:
+              'html_before_fields'   => '<input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">',
+              // Hidden link to this product for the post-save hook:
+              'hidden_fields'        => [ 'current_product' => (int) $shoe_id ],
             ]);
             ?>
 
-          <?php else: // Guest: show UM login/register links ?>
+          <?php else: // Guest: show login/register buttons with redirect back to form ?>
             <?php
-              if ( !function_exists('omniora_um_core_url') ) {
-                // very small fallback if helper not loaded
-                $login_url = wp_login_url( get_permalink($shoe_id) );
-                $reg_url   = function_exists('wp_registration_url') ? wp_registration_url() : wp_login_url();
-              } else {
-                $login_url = omniora_um_core_url('login');
-                if ($login_url) $login_url = add_query_arg('redirect_to', rawurlencode(get_permalink($shoe_id)), $login_url);
-                $reg_url   = omniora_um_core_url('register');
-              }
+              // Hard-wire your exact pages and include redirect back to the form
+              $redirect_target = get_permalink($shoe_id) . '#write-review';
+              $login_url = add_query_arg(
+                'redirect_to',
+                rawurlencode($redirect_target),
+                home_url('/login-2/')
+              );
+              $reg_url = add_query_arg(
+                'redirect_to',
+                rawurlencode($redirect_target),
+                home_url('/account/')
+              );
             ?>
             <div class="notice error">
               <p><?php echo esc_html__('You must be logged in to write a testimonial.','omniora'); ?></p>
@@ -109,12 +109,12 @@ get_header(); ?>
         </section>
 
         <?php
-        // Fetch latest testimonials for THIS product (current language)
+        // Latest testimonials for THIS product (current language)
         $keys = ['product_ref','related_product','product','related_shoe'];
-        $meta = ['relation'=>'OR'];
-        foreach ($keys as $k) {
-          $meta[] = ['key'=>$k,'value'=>$shoe_id,'compare'=>'='];
-          $meta[] = ['key'=>$k,'value'=>'"'.$shoe_id.'"','compare'=>'LIKE'];
+        $meta = ['relation' => 'OR'];
+        foreach ( $keys as $k ) {
+          $meta[] = ['key' => $k, 'value' => $shoe_id,         'compare' => '='];
+          $meta[] = ['key' => $k, 'value' => '"'.$shoe_id.'"', 'compare' => 'LIKE']; // relationship (serialized)
         }
         $q = new WP_Query([
           'post_type'      => 'testimonial',
@@ -123,7 +123,7 @@ get_header(); ?>
           'orderby'        => 'date',
           'order'          => 'DESC',
           'meta_query'     => $meta,
-          'lang'           => function_exists('pll_current_language') ? pll_current_language('slug') : ''
+          'lang'           => function_exists('pll_current_language') ? pll_current_language('slug') : '',
         ]);
         ?>
         <section id="pdp-testimonials" class="pdp-testimonials" style="margin-top:32px;">
@@ -134,21 +134,25 @@ get_header(); ?>
               <?php while ( $q->have_posts() ) : $q->the_post();
                 $tid    = get_the_ID();
                 $name   = get_the_title($tid);
-                $quote  = function_exists('get_field') ? (string) get_field('quote',$tid) : get_the_excerpt($tid);
-                $rating = function_exists('get_field') ? (int) get_field('rating',$tid) : 5;
+                $quote  = function_exists('get_field') ? (string) get_field('quote', $tid) : get_the_excerpt($tid);
+                $rating = function_exists('get_field') ? (int) get_field('rating', $tid) : 5;
                 $avatar = has_post_thumbnail($tid)
-                  ? get_the_post_thumbnail($tid,'avatar-96',['class'=>'t-card__avatar','loading'=>'lazy','alt'=>esc_attr(($name?:__('Customer','omniora')).' portrait')])
+                  ? get_the_post_thumbnail($tid, 'avatar-96', [
+                      'class'   => 't-card__avatar',
+                      'loading' => 'lazy',
+                      'alt'     => esc_attr( ($name ?: __('Customer','omniora')) . ' portrait' ),
+                    ])
                   : '';
-                $r = max(1,min(5,$rating));
+                $r = max(1, min(5, $rating));
               ?>
                 <article class="t-card">
-                  <?php if ($avatar): ?><div class="t-card__media"><?php echo $avatar; ?></div><?php endif; ?>
+                  <?php if ( $avatar ) : ?><div class="t-card__media"><?php echo $avatar; ?></div><?php endif; ?>
                   <div class="t-card__body">
-                    <div class="t-card__rating" aria-label="<?php echo esc_attr( sprintf(__('Rating: %d out of 5','omniora'), $r) ); ?>">
-                      <?php echo str_repeat('★',$r).str_repeat('☆',5-$r); ?>
+                    <div class="t-card__rating" aria-label="<?php echo esc_attr( sprintf( __('Rating: %d out of 5','omniora'), $r ) ); ?>">
+                      <?php echo str_repeat('★', $r) . str_repeat('☆', 5 - $r); ?>
                     </div>
-                    <?php if ($quote): ?><blockquote class="t-card__quote"><p><?php echo wp_kses_post($quote); ?></p></blockquote><?php endif; ?>
-                    <?php if ($name):  ?><h3 class="t-card__name"><?php echo esc_html($name); ?></h3><?php endif; ?>
+                    <?php if ( $quote ) : ?><blockquote class="t-card__quote"><p><?php echo wp_kses_post($quote); ?></p></blockquote><?php endif; ?>
+                    <?php if ( $name )  : ?><h3 class="t-card__name"><?php echo esc_html($name); ?></h3><?php endif; ?>
                   </div>
                 </article>
               <?php endwhile; wp_reset_postdata(); ?>
@@ -165,3 +169,4 @@ get_header(); ?>
 </section>
 
 <?php get_footer(); ?>
+

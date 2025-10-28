@@ -45,8 +45,7 @@ if ( ! function_exists( 'wc_admin_get_feature_config' ) ) {
 			'launch-your-store' => true,
 			'product-editor-template-system' => false,
 			'use-wp-horizon' => false,
-			'add-to-cart-with-options-stepper-layout' => true,
-			'experimental-wc-rest-api' => false,
+			'rest-api-v4' => false,
 		);
 	}
 }
