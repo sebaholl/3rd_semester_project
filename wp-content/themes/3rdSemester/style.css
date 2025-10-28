@@ -597,3 +597,32 @@ main { padding: 20px 16px; }
 .lang-switch a:hover{border-color:#333}
 .lang-switch li.is-active a{background:#111;color:#fff;border-color:#111;pointer-events:none}
 @media (max-width:640px){.lang-switch a{padding:.3rem .5rem;font-size:.85rem}}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .header-actions {
+    margin-left: 0; /* Reset margin for mobile */
+    width: 100%; /* Full width for actions */
+    display: flex;
+    flex-direction: column; /* Stack actions vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .primary-nav {
+    width: 100%; /* Full width for navigation */
+  }
+
+  .lang-switch {
+    margin-top: 10px; /* Add space between language switch and other elements */
+  }
+
+  .search-panel {
+    width: 100%; /* Full width for search panel */
+    margin-top: 10px; /* Add space above search panel */
+  }
+}
