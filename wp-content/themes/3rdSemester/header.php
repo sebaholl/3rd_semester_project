@@ -46,7 +46,7 @@
   <!-- Promo banner (placed directly below the nav) -->
   <section class="promo-banner promo-banner--halloween" aria-label="Halloween Deals banner">
     <div class="container">
-      <p class="promo-banner__text">Halloween Deals — <strong>Up to 50% off</strong>! <a class="promo-banner__link" href="<?php echo esc_url( home_url('/halloween-deals') ); ?>">Shop now</a></p>
+      <p class="promo-banner__text">Halloween Deals — <strong>Get 10% off on all Halloween shoes using the coupon: Halloween123</strong>! <a class="promo-banner__link" href="<?php echo esc_url( home_url('/halloween-deals') ); ?>">Shop now</a></p>
     </div>
   </section>
 

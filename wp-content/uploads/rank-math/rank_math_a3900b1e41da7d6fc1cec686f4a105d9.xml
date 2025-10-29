@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//3rdsemesterproject.local/main-sitemap.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>http://3rdsemesterproject.local/post-sitemap.xml</loc>
+		<lastmod>2025-09-30T12:35:46+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://3rdsemesterproject.local/page-sitemap.xml</loc>
+		<lastmod>2025-10-28T12:39:47+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://3rdsemesterproject.local/shoe-sitemap.xml</loc>
+		<lastmod>2025-10-01T10:16:04+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://3rdsemesterproject.local/testimonial-sitemap.xml</loc>
+		<lastmod>2025-09-30T08:40:13+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://3rdsemesterproject.local/product-sitemap.xml</loc>
+		<lastmod>2025-10-28T17:04:09+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>http://3rdsemesterproject.local/category-sitemap.xml</loc>
+		<lastmod>2025-09-30T12:33:50+00:00</lastmod>
+	</sitemap>
+</sitemapindex>
