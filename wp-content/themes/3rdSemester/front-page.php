@@ -64,7 +64,7 @@ $read_blog_text = function_exists('pll__') ? pll__('Read Blog') : __('Read Blog'
         </a>
       </div>
     </div>
-    <div class="homepage-hero__image" <?php echo $bgurl ? 'style="background-image:url('.$bgurl.');"' : ''; ?>></div>
+    <div class="homepage-hero__image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/pictures/hero-image.jpg');"></div>
   </div>
 </section>
 
