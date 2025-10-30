@@ -49,8 +49,19 @@ $primary_cat = $cats ? $cats[0] : null;
 $tags = get_the_terms($post_id, 'post_tag');
 ?>
 <article class="post-card">
-  <a class="post-card__media" href="<?php echo esc_url($permalink); ?>">
-    <?php echo $img_html; ?>
+    <a class="post-card__media" href="<?php echo esc_url($permalink); ?>">
+    <?php 
+      $thumbnail_id = get_post_thumbnail_id($post->ID); 
+      $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); 
+
+      // If no alt in media, fallback to post title
+      $alt = $alt ? $alt : get_the_title($post->ID);
+
+      // Inject alt attribute into $img_html
+      $img_html = str_replace('<img', '<img alt="' . esc_attr($alt) . '"', $img_html);
+
+      echo $img_html;
+    ?>
   </a>
 
   <div class="post-card__body">

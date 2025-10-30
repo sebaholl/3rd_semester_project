@@ -66,10 +66,20 @@
 
     </div><!-- /header-actions -->
   </div>
+  
+  <!-- Promo banner (placed directly below the nav) -->
+  <section class="promo-banner promo-banner--halloween" aria-label="Halloween Deals banner">
+    <div class="container">
+      <p class="promo-banner__text">Halloween Deals — <strong>Get 10% off on all Halloween shoes using the coupon: Halloween123</strong>! <a class="promo-banner__link" href="<?php echo esc_url( home_url('/halloween-deals') ); ?>">Shop now</a></p>
+    </div>
+  </section>
 
   <div class="search-panel">
     <div class="container"><?php get_search_form(); ?></div>
   </div>
+
+ 
+
 </header>
 
 <!-- 🔹 Simple JS toggle for mobile menu -->

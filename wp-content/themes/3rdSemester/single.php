@@ -55,7 +55,7 @@ get_header(); ?>
             $hero = function_exists('get_field') ? get_field('hero_image') : null;
             if ( is_array($hero) && !empty($hero['url']) ) : ?>
               <div class="single-article__thumb">
-                <img src="<?php echo esc_url($hero['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                <img src="<?php echo esc_url($hero['url']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" alt="<?php echo $image["alt"] ?>">
               </div>
           <?php elseif ( has_post_thumbnail() ) : ?>
             <div class="single-article__thumb">
@@ -223,8 +223,7 @@ get_header(); ?>
   </div>
 </section>
 
-<?php get_footer();
-
+ <?php get_footer(); 
 
 
 
