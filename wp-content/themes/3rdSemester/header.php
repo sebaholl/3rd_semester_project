@@ -12,7 +12,7 @@
     <div class="site-branding">
       <a href="<?php echo esc_url(home_url('/')); ?>">
         <?php if (has_custom_logo()) the_custom_logo(); ?>
-        <span><?php bloginfo('name'); ?></span>
+        <span>EcoSteps</span>
       </a>
     </div>
 
@@ -37,9 +37,7 @@
           </nav>
       <?php endif; endif; ?>
 
-      <button class="btn btn-primary js-search-toggle">
-        <?php echo function_exists('pll__') ? pll__('Search') : __('Search','omniora'); ?>
-      </button>
+   
     </div>
   </div>
   

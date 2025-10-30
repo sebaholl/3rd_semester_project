@@ -467,7 +467,7 @@ body{
 
 
 /* Chips (cats/tags) */
-.chip{display:inline-block;padding:.25rem .6rem;border:1px solid #ddd;border-radius:999px;font-size:.85rem;text-decoration:none;margin:.2rem .25rem 0 0}
+.chip{display:inline-block;padding:.35rem .6rem;border:1px solid #ddd;border-radius:999px;font-size:.85rem;text-decoration:none;margin:.5rem .25rem 0 0;}
 .chip--cat{font-weight:600}
 
 
@@ -774,13 +774,20 @@ body{
   font-size: 1rem;
   color: #ffd18a;
 }
+.deal-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px; /* optional, adds breathing room */
+}
 
 /* Woo Add-to-cart button (inherits Woo classes) */
 .deal-card__cta .button {
   border-radius: 999px;
-  padding: 8px 14px;
+  padding: 8px 20px;
   font-weight: 600;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
+   white-space: nowrap; /* keeps “Add to cart” on one line */
 }
 .deal-card__cta .button:hover {
   transform: translateY(-1px);
@@ -792,6 +799,43 @@ body{
   color: #a0a0ad;
   text-align: center;
   grid-column: 1 / -1;
+}
+
+.halloween-deals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: stretch; /* ensures equal card height */
+  justify-items: stretch;
+  margin: 24px 0;
+}
+
+/* AAA target sizing */
+
+/* For navigation links */
+.primary-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px 12px; /* Adjust visually if needed */
+}
+
+/* For language switch links */
+.lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 10px;
+}
+
+/* For buttons */
+.btn {
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /* Optional: compact gaps on very small screens */
